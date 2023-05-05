@@ -102,9 +102,7 @@
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/pages/error404.html"
-                      >FPS</a
-                    >
+                    <a class="dropdown-item" href="/pages/error404.html">FPS</a>
                   </li>
                 </ul>
               </li>
@@ -128,8 +126,87 @@
               </button>
             </form>
 
+            <!-- MODAL DE LOGIN + BOTON -->
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn fs-4 d-flex"
+              data-bs-toggle="modal"
+              data-bs-target="#modalLogin"
+            >
+              <i class="bi bi-person-circle me-3 me-lg-0"> </i>
+              <p class="d-block d-lg-none">Ingresá</p>
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="modalLogin"
+              tabindex="-1"
+              aria-labelledby="modalLoginLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5 " id="modalLoginLabel"><b>Pixel</b>Games Login</h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- FORMULARIO DE LOGIN -->
+                    <form>
+                      <div class="form-floating mb-3">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="name@example.com"
+                        />
+                        <label for="floatingInput">Usuario</label>
+                      </div>
+                      <div class="form-floating">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="floatingPassword"
+                          placeholder="Password"
+                        />
+                        <label for="floatingPassword">Contraseña</label>
+                      </div>
+                      <button type="button" class="btn btn-primary mt-2">
+                        Ingresar
+                      </button>
+
+                      <hr />
+
+                    </form>
+                    <div class="d-flex">
+                      <p>No eres usuario?</p>
+                      <a class="linkSolo ms-1" href="/pages/error404.html">
+                        Suscribete aqui!</a
+                      >
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- BOTON CAMBIAR TEMA CLARO/OSCURO  -->
-            <span class="nav-item dropdown">
+            <span class="nav-item dropdown ms-2 mt-4 mt-md-0">
               <span
                 class="nav-link dropdown-toggle"
                 role="button"
@@ -151,12 +228,6 @@
                 </li>
               </ul>
             </span>
-            <!-- BOTON DE LOGIN  -->
-
-            <button type="button" class="btn">
-              <i class="bi bi-person-fill"> </i>
-              <p class="d-sm-block d-md-none">Iniciar Sesión</p>
-            </button>
           </div>
         </div>
       </nav>
@@ -173,7 +244,9 @@
         >
           <ul class="list-unstyled text-center">
             <li class="pb-3">
-              <a class="navbar-brand fs-3 " href="/index.html"><b>Pixel</b>Games</a>
+              <a class="navbar-brand fs-3" href="/index.html"
+                ><b>Pixel</b>Games</a
+              >
             </li>
 
             <li>
@@ -185,27 +258,29 @@
         </aside>
         <aside class="d-flex flex-column text-center col-12 col-md-4">
           <h4 class="h6">Seguinos en redes</h4>
-          <div
-            class="d-flex justify-content-center gap-4 pt-2 pt-md-3"
-          >
+          <div class="d-flex justify-content-center gap-4 pt-2 pt-md-3">
             <a href="/pages/error404.html"
               ><i class="bi bi-facebook p-1 fs-3 linkSolo"></i
             ></a>
             <a href="/pages/error404.html"
               ><i class="bi bi-instagram p-1 fs-3 linkSolo"></i
             ></a>
-            <a href="/pages/error404.html"><i class="bi bi-twitter p-1 fs-3 linkSolo"></i></a>
-            <a href="/pages/error404.html"><i class="bi bi-twitch p-1 fs-3 linkSolo"></i></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-twitter p-1 fs-3 linkSolo"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-twitch p-1 fs-3 linkSolo"></i
+            ></a>
           </div>
         </aside>
         <aside class="col-12 col-md-4 text-center">
           <ul class="list-unstyled d-flex flex-column align-items-center">
             <h4 class="h6 container pt-4 pt-md-0">Navegacion</h4>
             <div class="row justify-content-between">
-              <li class="col-2 col-md-12 ">
+              <li class="col-2 col-md-12">
                 <a class="linkSolo" href="/pages/nosotros.html">Nosotros</a>
               </li>
-              <li class="col-2 col-md-12 ">
+              <li class="col-2 col-md-12">
                 <a class="linkSolo" href="/pages/error404.html">Contacto</a>
               </li>
               <li class="col-2 col-md-12 linkSolo">
