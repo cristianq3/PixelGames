@@ -20,17 +20,15 @@ main {
 
 footer {
   box-shadow: 2px 5px 19px rgba(0, 0, 0, 0.495);
-  
 }
 
 .linkSolo {
   text-decoration: none;
-  color: grey
-  }
-  .linkSolo:hover {
-    color: rgb(238, 209, 19);
-  }
-
+  color: grey;
+}
+.linkSolo:hover {
+  color: rgb(238, 209, 19);
+}
 
 /* Media Query para Dispositivos PEQUEÑOS */
 

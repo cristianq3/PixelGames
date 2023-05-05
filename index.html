@@ -149,7 +149,9 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5 " id="modalLoginLabel"><b>Pixel</b>Games Login</h1>
+                    <h1 class="modal-title fs-5" id="modalLoginLabel">
+                      <b>Pixel</b>Games Login
+                    </h1>
                     <button
                       type="button"
                       class="btn-close"
@@ -160,35 +162,47 @@
                   <div class="modal-body">
                     <!-- FORMULARIO DE LOGIN -->
                     <form>
+                      <h6 class="h6">Ingresa con tu e-mail y contraseña:</h6>
                       <div class="form-floating mb-3">
                         <input
                           type="email"
+                          maxlength="254 "
+                          minlength="4"
                           class="form-control"
                           id="floatingInput"
-                          placeholder="name@example.com"
+                          placeholder="nombre@mail.com"
+                          required
                         />
                         <label for="floatingInput">Usuario</label>
                       </div>
                       <div class="form-floating">
                         <input
+                          required
                           type="password"
                           class="form-control"
                           id="floatingPassword"
                           placeholder="Password"
+                          maxlength="128"
+                          minlength="6"
                         />
                         <label for="floatingPassword">Contraseña</label>
                       </div>
-                      <button type="button" class="btn btn-primary mt-2">
-                        Ingresar
-                      </button>
+                      <div class="d-flex justify-content-end align-items-end">
+                        <button
+                          id="btnIngresar"
+                          type="button"
+                          class="btn btn-primary mt-2 align-self-end"
+                        >
+                          Ingresar
+                        </button>
+                      </div>
 
                       <hr />
-
                     </form>
                     <div class="d-flex">
                       <p>No eres usuario?</p>
                       <a class="linkSolo ms-1" href="/pages/error404.html">
-                        Suscribete aqui!</a
+                        Haz tu cuenta aqui!</a
                       >
                     </div>
                   </div>
