@@ -1,0 +1,75 @@
+/* Posicionnamiento del titulo del juego */
+.HeroPng {
+  width: 400px;
+  top: 20%;
+  right: 5%;
+  text-shadow: 1px 1px 5px #000000;
+  color: #ffffff;
+}
+/* Ajustes Imagen Grande de Juego */
+.ImgHero {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 30%;
+}
+
+.TituloJuego {
+  font-size: 90px;
+}
+
+.btn-warning {
+  width: 100%;
+  text-shadow: 2px 2px 9px #000000;
+}
+
+footer {
+    z-index: 2;
+}
+
+header {
+    z-index: 3;
+}
+.TituloPng {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+
+
+
+}
+
+
+/* Media Querys */
+@media (max-width: 640px) {
+  /* Posicionamiento de imagen principal y letras */
+  .HeroPng {
+    width: fit-content;
+    top: 25%;
+    left: 20%;
+    font-size: 15px;
+  }
+  .contenedorTituloydetalle {
+    width: 280px;
+}
+  .TituloJuego {
+    font-size: 50px;
+  }
+  .fraseJuego {
+    font-size: 9px;
+  }
+  .descripcionJuego {
+    font-size: 15px;
+    width: 100%;
+  }
+  .btn-warning {
+    width: 100%;
+    text-shadow: 2px 2px 9px #000000;
+  }
+  .heroSection .ImgHero {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 30%;
+  }
+
+
+}
