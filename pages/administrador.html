@@ -306,12 +306,12 @@
                 <td scope="col">1</td>
                 <td>STAR WARS Jedi Survivor</td>
                 <td class="celdaTamanio text-truncate">
-                    Cal ya no es un padawan, sino que ha madurado y se ha
-                    convertido en un poderoso caballero Jedi. Los recuerdos y las
-                    expectativas de la Orden Jedi cada vez pesan más sobre él y su
-                    cruzada contra el Imperio se vuelve más peligrosa cada segundo
-                    que pasa. Es hora de que Cal decida hasta dónde está dispuesto
-                    a llegar para salvar a sus seres queridos.
+                  Cal ya no es un padawan, sino que ha madurado y se ha
+                  convertido en un poderoso caballero Jedi. Los recuerdos y las
+                  expectativas de la Orden Jedi cada vez pesan más sobre él y su
+                  cruzada contra el Imperio se vuelve más peligrosa cada segundo
+                  que pasa. Es hora de que Cal decida hasta dónde está dispuesto
+                  a llegar para salvar a sus seres queridos.
                 </td>
                 <td class="celdaTamanio text-truncate">
                   https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
@@ -332,6 +332,132 @@
         </article>
       </section>
     </main>
+
+    <!-- Modal panel administrador -->
+    <div
+      class="modal fade"
+      id="modalVideoJuego"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Administrar Videojuego
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formVideoJuego">
+              <div class="mb-3">
+                <label for="codigo">Código</label>
+                <input
+                  id="codigo"
+                  type="text"
+                  class="form-control"
+                  placeholder="123"
+                  maxlength="5"
+                  minlength="1"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="titulo">Titulo *</label>
+                <input
+                  id="titulo"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: STAR WARS Jedi Survivor"
+                  maxlength="60"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descripcion">Descripcion *</label>
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Cal ya no es un padawan,sino que ha madurado y se ha convertido en un poderoso caballero Jedi. Los recuerdos y las expectativas de la Orden Jedi cada vez pesan más sobre él y su cruzada contra el Imperio se vuelve más peligrosa cada segundo que pasa. Es hora de que Cal decida hasta dónde está dispuesto a llegar para salvar a sus seres queridos."
+                  maxlength="200"
+                  minlength="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="imagen"
+                  >Imagen *
+                  <small class="text-secondary">
+                    (URL con formato .png, .jpg o gif)</small
+                  ></label
+                >
+                <input
+                  id="imagen"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: http://127.0.0.1:5500/pages/macross.png"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="genero">Genero *</label>
+                <select id="genero" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">Accion</option>
+                  <option value="aventura">Aventura</option>
+                  <option value="deportivos">Deportivos</option>
+                  <option value="estrategia">Estrategia</option>
+                  <option value="familiar">Familiar</option>
+                  <option value="fantasia">Fantasía</option>
+                  <option value="mmorpg">MMORPG</option>
+                  <option value="simulacion">Simulación</option>
+                  <option value="terror">Terror</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="anio">Año</label>
+                <input
+                  id="anio"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: 2023"
+                  maxlength="4"
+                  minlength="4"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="genero">Plataforma *</label>
+                <select id="genero" class="form-control   required ">
+                  <option value="">Selecione una opcion</option>
+                  <option value="pc">PC</option>
+                  <option value="playstation5">PlayStation 5</option>
+                  <option value="vboxSeriesX">Xbox Series X</option>
+                  <option value="nintendoSwitch">Nintendo Switch</option>
+                  <option value="moviles">Móviles</option>
+                </select>
+              
+              </div>
+              <div
+                class="alert alert-danger mt-3 d-none"
+                role="alert"
+                id="alerta"
+              ></div>
+              <button class="btn btn-primary" type="submit" id="btnFormulario">
+                Enviar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer con info de RRSS y contacto -->
     <footer
