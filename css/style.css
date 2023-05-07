@@ -30,6 +30,13 @@ footer {
   color: rgb(238, 209, 19);
 }
 
+
+/*cssadministrador*/
+.celdaTamanio {
+  max-width: 10rem;
+}
+
+
 /* Media Query para Dispositivos PEQUEÑOS */
 
 @media (max-width: 640px) {
