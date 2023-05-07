@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta title="PixelGames" />
+    <meta
+      author="Tomas Quispe, Emilia Belen Ramos, Rosario Blac Sleiman, Leiva Marcelo, Walter Ivan Duarte, Cristian Quiroga"
+    />
+    <!-- Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <!-- Boostrap Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- Estilos propios CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <title>PixelGames</title>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar completa -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+        <div class="container">
+          <!-- Logo PixelGames con link al index -->
+          <span>
+            <i class="bi bi-joystick fs-4 me-1"></i>
+            <a class="navbar-brand" href="/index.html"
+              ><b>Pixel</b>Games</a
+            ></span
+          >
+          <!-- Boton Hamburguesa para Dispositivos Medios y Pequeños -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#ContenidoNavbar"
+            aria-controls="ContenidoNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- NAVBAR CON SUS COMPONENTES -->
+          <div class="collapse navbar-collapse" id="ContenidoNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/error404.html">Novedades</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/error404.html">Tienda</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categorias
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/pages/error404.html"
+                      >Accion</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/pages/error404.html">FPS</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/pages/error404.html"
+                      >Simulación</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/pages/error404.html"
+                      >Deportes</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/pages/error404.html"
+                      >Aventuras</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/pages/error404.html">FPS</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <!-- FORMULARIO DE BUSQUEDA -->
+            <form
+              class="d-flex ms-0 ms-md-4"
+              role="search"
+              id="formularioBuscarNavbar"
+            >
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar Juego"
+                aria-label="Search"
+                maxlength="150"
+                minlength="3"
+              />
+              <button class="btn btn-outline-secondary border-0" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
+
+            <!-- MODAL DE LOGIN + BOTON -->
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn fs-4 d-flex"
+              data-bs-toggle="modal"
+              data-bs-target="#modalLogin"
+            >
+              <i class="bi bi-person-circle me-3 me-lg-0"> </i>
+              <p class="d-block d-lg-none">Ingresá</p>
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="modalLogin"
+              tabindex="-1"
+              aria-labelledby="modalLoginLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalLoginLabel">
+                      <b>Pixel</b>Games Login
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- FORMULARIO DE LOGIN -->
+                    <form>
+                      <h6 class="h6">Ingresa con tu e-mail y contraseña:</h6>
+                      <div class="form-floating mb-3">
+                        <input
+                          type="email"
+                          maxlength="254 "
+                          minlength="4"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="nombre@mail.com"
+                          required
+                        />
+                        <label for="floatingInput">Usuario</label>
+                      </div>
+                      <div class="form-floating">
+                        <input
+                          required
+                          type="password"
+                          class="form-control"
+                          id="floatingPassword"
+                          placeholder="Password"
+                          maxlength="128"
+                          minlength="6"
+                        />
+                        <label for="floatingPassword">Contraseña</label>
+                      </div>
+                      <div class="d-flex justify-content-end align-items-end">
+                        <button
+                          id="btnIngresar"
+                          type="button"
+                          class="btn btn-primary mt-2 align-self-end"
+                        >
+                          Ingresar
+                        </button>
+                      </div>
+
+                      <hr />
+                    </form>
+                    <div class="d-flex">
+                      <p>No eres usuario?</p>
+                      <a class="linkSolo ms-1" href="/pages/error404.html">
+                        Haz tu cuenta aqui!</a
+                      >
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTON CAMBIAR TEMA CLARO/OSCURO  -->
+            <span class="nav-item dropdown ms-2 mt-4 mt-md-0">
+              <span
+                class="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-moon-stars-fill"></i>
+              </span>
+              <ul class="dropdown-menu temasDarkLigth">
+                <li>
+                  <button class="dropdown-item" id="btnThemeLight">
+                    <i class="bi bi-sun-fill"></i> Light
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" id="btnThemeDark">
+                    <i class="bi bi-moon-stars-fill"></i> Dark
+                  </button>
+                </li>
+              </ul>
+            </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container my-5">
+        <h1 class="display-4 text-center">Administrador de Peliculas</h1>
+        <hr />
+        <section class="d-flex">
+          <p class="mb-0">Opciones:</p>
+          <button
+            class="btn btn-outline-primary btn-sm ms-3"
+            id="btnCrearPelicula"
+            data-bs-target="#modalPelicula" data-bs-toggle="modal"
+          >
+            <i class="bi bi-clipboard2-plus-fill"></i>
+          </button>
+        </section>
+        <section class="mt-5">
+          <h2 class="display-6">Lista de Pelis</h2>
+          <hr />
+          <article class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Titulo</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Imagen</th>
+                  <th scope="col">Genero</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tablaPelicula">
+                <tr>
+                  <td scope="col">1</td>
+                  <td>Super Mario Bros: La película</td>
+                  <td class="celdaTamanio text-truncate">
+                    Mientras trabajan en una avería subterránea, los fontaneros de
+                    Brooklyn, Mario y su hermano Luigi, viajan por una misteriosa
+                    tubería hasta un nuevo mundo mágico. Pero, cuando los hermanos
+                    se separan, Mario deberá emprender una épica misión para
+                    encontrar a Luigi. Con la ayuda del champiñón local Toad y
+                    unas cuantas nociones de combate de la guerrera líder del
+                    Reino Champiñón, la princesa Peach, Mario descubre todo el
+                    poder que alberga en su interior.
+                  </td>
+                  <td class="celdaTamanio text-truncate">
+                    https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
+                  </td>
+                  <td>Aventura</td>
+                  <td>
+                    <button class="btn btn-warning">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-danger">
+                      <i class="bi bi-x-square"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="col">1</td>
+                  <td>Super Mario Bros: La película</td>
+                  <td class="celdaTamanio text-truncate">
+                    Mientras trabajan en una avería subterránea, los fontaneros de
+                    Brooklyn, Mario y su hermano Luigi, viajan por una misteriosa
+                    tubería hasta un nuevo mundo mágico. Pero, cuando los hermanos
+                    se separan, Mario deberá emprender una épica misión para
+                    encontrar a Luigi. Con la ayuda del champiñón local Toad y
+                    unas cuantas nociones de combate de la guerrera líder del
+                    Reino Champiñón, la princesa Peach, Mario descubre todo el
+                    poder que alberga en su interior.
+                  </td>
+                  <td class="celdaTamanio text-truncate">
+                    https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
+                  </td>
+                  <td>Aventura</td>
+                  <td>
+                    <button class="btn btn-warning">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-danger">
+                      <i class="bi bi-x-square"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+        </section>
+      </main>
+
+    <!-- Footer con info de RRSS y contacto -->
+    <footer
+      class="bg-body-tertiary pt-3 d-flex justify-content-center flex-column align-items-center"
+    >
+      <div class="container row">
+        <aside
+          class="justify-content-center align-items-center col-12 col-md-4"
+        >
+          <ul class="list-unstyled text-center">
+            <li class="pb-3">
+              <a class="navbar-brand fs-3" href="/index.html"
+                ><b>Pixel</b>Games</a
+              >
+            </li>
+
+            <li>
+              <a class="btn btn-primary-lg fs-3" href="/pages/error404.html">
+                Suscribete a <i class="bi bi-joystick"></i> <b>Pixel</b> G +
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <aside class="d-flex flex-column text-center col-12 col-md-4">
+          <h4 class="h6">Seguinos en redes</h4>
+          <div class="d-flex justify-content-center gap-4 pt-2 pt-md-3">
+            <a href="/pages/error404.html"
+              ><i class="bi bi-facebook p-1 fs-3 linkSolo"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-instagram p-1 fs-3 linkSolo"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-twitter p-1 fs-3 linkSolo"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-twitch p-1 fs-3 linkSolo"></i
+            ></a>
+          </div>
+        </aside>
+        <aside class="col-12 col-md-4 text-center">
+          <ul class="list-unstyled d-flex flex-column align-items-center">
+            <h4 class="h6 container pt-4 pt-md-0">Navegacion</h4>
+            <div class="row justify-content-between">
+              <li class="col-2 col-md-12">
+                <a class="linkSolo" href="/pages/nosotros.html">Nosotros</a>
+              </li>
+              <li class="col-2 col-md-12">
+                <a class="linkSolo" href="/pages/error404.html">Contacto</a>
+              </li>
+              <li class="col-2 col-md-12 linkSolo">
+                <a class="linkSolo" href="/pages/error404.html">Tienda</a>
+              </li>
+              <li class="col-2 col-md-12 linkSolo">
+                <a class="linkSolo" href="/pages/error404.html">Legales</a>
+              </li>
+            </div>
+          </ul>
+        </aside>
+      </div>
+      <!-- PIE DE PAGINA ABAJO DE Info de FOOTER -->
+      <div class="bg-body-secondary piePagina text-center px-2 py-1 rounded">
+        Los servicios y productos que presta y comercializa PixelGames S.A.
+        están sujetos a disponibilidad técnica - © 2023 PixelGames - Todos los
+        derechos reservados - Avenida del Lucero Fugáz 459 - S.M. de Tucumán
+      </div>
+    </footer>
+    <!-- Boostrap JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/administrador.js"></script>
+  </body>
+</html>
