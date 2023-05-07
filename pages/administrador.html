@@ -247,91 +247,91 @@
       </nav>
     </header>
     <main class="container my-5">
-        <h1 class="display-4 text-center">Administrador de Peliculas</h1>
+      <h1 class="display-4 text-center">Administrador de Videojuegos</h1>
+      <hr />
+      <section class="d-flex">
+        <p class="mb-0">Opciones:</p>
+        <button
+          class="btn btn-outline-primary btn-sm ms-3"
+          id="btnCrearVideoJuego"
+          data-bs-target="#modalVideoJuego"
+          data-bs-toggle="modal"
+        >
+          <i class="bi bi-clipboard2-plus-fill"></i>
+        </button>
+      </section>
+      <section class="mt-5">
+        <h2 class="display-6">Lista de Videojuegos</h2>
         <hr />
-        <section class="d-flex">
-          <p class="mb-0">Opciones:</p>
-          <button
-            class="btn btn-outline-primary btn-sm ms-3"
-            id="btnCrearPelicula"
-            data-bs-target="#modalPelicula" data-bs-toggle="modal"
-          >
-            <i class="bi bi-clipboard2-plus-fill"></i>
-          </button>
-        </section>
-        <section class="mt-5">
-          <h2 class="display-6">Lista de Pelis</h2>
-          <hr />
-          <article class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Titulo</th>
-                  <th scope="col">Descripcion</th>
-                  <th scope="col">Imagen</th>
-                  <th scope="col">Genero</th>
-                  <th scope="col">Acciones</th>
-                </tr>
-              </thead>
-              <tbody id="tablaPelicula">
-                <tr>
-                  <td scope="col">1</td>
-                  <td>Super Mario Bros: La película</td>
-                  <td class="celdaTamanio text-truncate">
-                    Mientras trabajan en una avería subterránea, los fontaneros de
-                    Brooklyn, Mario y su hermano Luigi, viajan por una misteriosa
-                    tubería hasta un nuevo mundo mágico. Pero, cuando los hermanos
-                    se separan, Mario deberá emprender una épica misión para
-                    encontrar a Luigi. Con la ayuda del champiñón local Toad y
-                    unas cuantas nociones de combate de la guerrera líder del
-                    Reino Champiñón, la princesa Peach, Mario descubre todo el
-                    poder que alberga en su interior.
-                  </td>
-                  <td class="celdaTamanio text-truncate">
-                    https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
-                  </td>
-                  <td>Aventura</td>
-                  <td>
-                    <button class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button class="btn btn-danger">
-                      <i class="bi bi-x-square"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td scope="col">1</td>
-                  <td>Super Mario Bros: La película</td>
-                  <td class="celdaTamanio text-truncate">
-                    Mientras trabajan en una avería subterránea, los fontaneros de
-                    Brooklyn, Mario y su hermano Luigi, viajan por una misteriosa
-                    tubería hasta un nuevo mundo mágico. Pero, cuando los hermanos
-                    se separan, Mario deberá emprender una épica misión para
-                    encontrar a Luigi. Con la ayuda del champiñón local Toad y
-                    unas cuantas nociones de combate de la guerrera líder del
-                    Reino Champiñón, la princesa Peach, Mario descubre todo el
-                    poder que alberga en su interior.
-                  </td>
-                  <td class="celdaTamanio text-truncate">
-                    https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
-                  </td>
-                  <td>Aventura</td>
-                  <td>
-                    <button class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button class="btn btn-danger">
-                      <i class="bi bi-x-square"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </article>
-        </section>
-      </main>
+        <article class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Plataforma</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaVideoJuego">
+              <tr>
+                <td scope="col">1</td>
+                <td>STAR WARS Jedi Survivor</td>
+                <td class="celdaTamanio text-truncate">
+                  Cal ya no es un padawan, sino que ha madurado y se ha
+                  convertido en un poderoso caballero Jedi. Los recuerdos y las
+                  expectativas de la Orden Jedi cada vez pesan más sobre él y su
+                  cruzada contra el Imperio se vuelve más peligrosa cada segundo
+                  que pasa. Es hora de que Cal decida hasta dónde está dispuesto
+                  a llegar para salvar a sus seres queridos.
+                </td>
+                <td class="celdaTamanio text-truncate">
+                  https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
+                </td>
+                <td>Aventura</td>
+                <td>Plataforma</td>
+                <td>
+                  <button class="btn btn-warning">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-x-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td scope="col">1</td>
+                <td>STAR WARS Jedi Survivor</td>
+                <td class="celdaTamanio text-truncate">
+                    Cal ya no es un padawan, sino que ha madurado y se ha
+                    convertido en un poderoso caballero Jedi. Los recuerdos y las
+                    expectativas de la Orden Jedi cada vez pesan más sobre él y su
+                    cruzada contra el Imperio se vuelve más peligrosa cada segundo
+                    que pasa. Es hora de que Cal decida hasta dónde está dispuesto
+                    a llegar para salvar a sus seres queridos.
+                </td>
+                <td class="celdaTamanio text-truncate">
+                  https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
+                </td>
+                <td>Aventura</td>
+                <td>Plataforma</td>
+                <td>
+                  <button class="btn btn-warning">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-x-square"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+    </main>
 
     <!-- Footer con info de RRSS y contacto -->
     <footer
