@@ -303,7 +303,7 @@
                 </td>
               </tr>
               <tr>
-                <td scope="col">1</td>
+                <td class="celdaTamanio" scope="col">1</td>
                 <td>STAR WARS Jedi Survivor</td>
                 <td class="celdaTamanio text-truncate">
                   Cal ya no es un padawan, sino que ha madurado y se ha
@@ -406,6 +406,24 @@
                   minlength="2"
                 />
               </div>
+
+              <div class="mb-3">
+                <label for="imagenGrande"
+                  >Imagen mayor tamaño*
+                  <small class="text-secondary">
+                    (URL con formato .png, .jpg o gif)</small
+                  ></label
+                >
+                <input
+                  id="imagen"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ej: http://127.0.0.1:5500/pages/macross.png"
+                  maxlength="120"
+                  minlength="2"
+                />
+              </div>
+
               <div class="mb-3">
                 <label for="genero">Genero *</label>
                 <select id="genero" class="form-control">
