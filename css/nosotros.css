@@ -3,33 +3,6 @@
 * {
   font-family: "Roboto Condensed", sans-serif;
 }
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex-grow: 1;
-}
-/* Boton de Cambio de Tema a Oscuro o Claro */
-.temasDarkLigth {
-  min-width: fit-content;
-}
-
-footer {
-  box-shadow: 2px 5px 19px rgba(0, 0, 0, 0.495);
-}
-
-.linkSolo {
-  text-decoration: none;
-  color: grey;
-}
-.linkSolo:hover {
-  color: rgb(238, 209, 19);
-}
-
 .conteiner {
   margin-top: 89px;
 }
@@ -57,10 +30,6 @@ footer {
   border: auto;
   padding: 7p 0px;
   object-fit: cover;
-}
-/*cssadministrador*/
-.celdaTamanio {
-  max-width: 10rem;
 }
 
 
