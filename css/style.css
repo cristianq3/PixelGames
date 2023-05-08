@@ -37,9 +37,7 @@ footer {
   color: black;
   margin-left: 10px;
 }
-p{
-  color: beige;
-}
+
 .nosotros{
   min-height: 100vh;
   background-image: url(../img/);
@@ -59,6 +57,10 @@ p{
   border: auto;
   padding: 7p 0px;
   object-fit: cover;
+}
+.h1{
+  color: white;
+  background: black;
 }
 
 
