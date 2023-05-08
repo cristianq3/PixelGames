@@ -37,6 +37,9 @@ footer {
   color: black;
   margin-left: 10px;
 }
+p{
+  color: beige;
+}
 .nosotros{
   min-height: 100vh;
   background-image: url(../img/);
@@ -57,6 +60,7 @@ footer {
   padding: 7p 0px;
   object-fit: cover;
 }
+
 
 /* Media Query para Dispositivos PEQUEÑOS */
 
