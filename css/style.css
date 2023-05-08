@@ -58,7 +58,10 @@ footer {
   padding: 7p 0px;
   object-fit: cover;
 }
-
+/*cssadministrador*/
+.celdaTamanio {
+  max-width: 10rem;
+}
 
 
 /* Media Query para Dispositivos PEQUEÑOS */
