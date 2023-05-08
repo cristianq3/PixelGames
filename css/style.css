@@ -30,10 +30,10 @@ footer {
   color: rgb(238, 209, 19);
 }
 
-.container {
+.conteiner {
   margin-top: 89px;
 }
-.row {
+.roow {
   color: black;
   margin-left: 10px;
 }
@@ -58,10 +58,7 @@ footer {
   padding: 7p 0px;
   object-fit: cover;
 }
-.h1{
-  color: white;
-  background: black;
-}
+
 
 
 /* Media Query para Dispositivos PEQUEÑOS */
