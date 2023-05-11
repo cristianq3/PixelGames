@@ -12,9 +12,6 @@ body {
 
 main {
   flex-grow: 1;
-  background-color: #151516;
-  background-image: linear-gradient(43deg, #151516 0%, #433a43 22%, #796d6d 49%, #988888 75%, #cdc6c6 100%);
-
 }
 /* Boton de Cambio de Tema a Oscuro o Claro */
 .temasDarkLigth {
@@ -33,9 +30,8 @@ main {
 
 /* Sector juegos*/
 .card {
-    width: 284px;
-    margin: 10px;
-
+  width: 284px;
+  margin: 10px;
 }
 
 footer {
@@ -53,12 +49,21 @@ footer {
 /* Media Query para Dispositivos PEQUEÑOS */
 
 @media (min-width: 280px) and (max-width: 720px) {
-    .heroCarousel {
-        width: 100%;
-        height: 380px;
-        object-fit: cover;
-        object-position: 50%;
-    }
+  .heroCarousel {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: 45%;
+  }
+
+  .texto-hero {
+    font-size: 30px;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+    bottom: 50px;
+    right: -5px;
+  }
 }
 
 @media (max-width: 640px) {
