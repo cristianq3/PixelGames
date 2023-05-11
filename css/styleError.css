@@ -53,17 +53,30 @@ p {
   margin-bottom: 40px;
 }
 
-a {
+p a {
   display: inline-block;
   padding: 12px 24px;
   font-family: "Roboto Condensed", sans-serif;
-  background-color: #333;
+  background-color: grey;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
-a:hover {
+p a:hover {
   background-color: #222;
 }
+footer {
+    box-shadow: 2px 5px 19px rgba(0, 0, 0, 0.495);
+    font-family: "Roboto Condensed", sans-serif;
+  }
+
+  .linkSolo {
+    text-decoration: none;
+    color: grey;
+  }
+  
+  .linkSolo:hover {
+    color: rgb(238, 209, 19);
+  }
