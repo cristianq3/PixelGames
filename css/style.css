@@ -18,6 +18,16 @@ main {
   min-width: fit-content;
 }
 
+/* Sector hero*/
+.texto-hero {
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: 0px; /* Ajusta este valor según tu necesidad */
+  right: px; /* Ajusta este valor según tu necesidad */
+  text-align: right;
+}
+
 footer {
   box-shadow: 2px 5px 19px rgba(0, 0, 0, 0.495);
 }
