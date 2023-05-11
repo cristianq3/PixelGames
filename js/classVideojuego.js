@@ -1,4 +1,4 @@
-class Juego {
+export default class Juego {
   #codigo;
   #nombre;
   #descripcion;
