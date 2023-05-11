@@ -24,9 +24,16 @@ main {
   color: #fff;
   position: absolute;
   bottom: 0px; /* Ajusta este valor según tu necesidad */
-  right: px; /* Ajusta este valor según tu necesidad */
+  right: 0px; /* Ajusta este valor según tu necesidad */
   text-align: right;
 }
+
+/* Sector juegos*/
+
+.card {
+  margin-top: 5px;
+}
+
 
 footer {
   box-shadow: 2px 5px 19px rgba(0, 0, 0, 0.495);
@@ -50,3 +57,5 @@ footer {
     padding: 10px;
   }
 }
+
+

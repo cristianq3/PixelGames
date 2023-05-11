@@ -28,3 +28,17 @@
             </div>
           </div>
           <div class="lc-block">
+
+
+          <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary">Comprar</button>
+                  <button type="button" class="btn btn-link">Más información</button>
+                </div>
+              </div>
+              
+            </div>
