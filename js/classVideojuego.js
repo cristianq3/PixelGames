@@ -1,29 +1,34 @@
 export default class Juego {
   #codigo;
   #nombre;
+  #precio;
+  #categoria;
   #descripcion;
   #imagen;
   #imagenMayorTamanio;
-  #genero;
-  #anio;
+  #requisitos;
+  #desarrollador;
   #plataforma;
 
   constructor(
     nombre,
+    precio,
     descripcion,
     imagen,
     imagenMayorTamanio,
-    genero,
-    anio,
+    requisitos,
+    desarrollador,
     plataforma
   ) {
-    this.#codigo = 0;
+    this.#codigo = uuidv4();
     this.#nombre = nombre;
+    this.#precio = precio;
+    this.#categoria = categoria;
     this.#descripcion = descripcion;
     this.#imagen = imagen;
     this.#imagenMayorTamanio = imagenMayorTamanio;
-    this.#genero = genero;
-    this.#anio = anio;
+    this.#requisitos = requisitos;
+    this.#desarrollador = desarrollador;
     this.#plataforma = plataforma;
   }
 
@@ -32,6 +37,13 @@ export default class Juego {
     return this.#nombre;
   }
 
+  get precio() {
+    return this.#precio;
+  }
+
+  get categoria() {
+    return this.#categoria;
+  }
   get descripcion() {
     return this.#descripcion;
   }
@@ -44,12 +56,12 @@ export default class Juego {
     return this.#imagenMayorTamanio;
   }
 
-  get genero() {
-    return this.#genero;
+  get requisitos() {
+    return this.#requisitos;
   }
 
-  get anio() {
-    return this.#anio;
+  get desarrollador() {
+    return this.#desarrollador;
   }
 
   get plataforma() {
@@ -59,6 +71,14 @@ export default class Juego {
   // Métodos para modificar las propiedades privadas (setters)
   set nombre(nombre) {
     this.#nombre = nombre;
+  }
+
+  set precio(precio) {
+    this.#precio = precio;
+  }
+
+  set categoria(categoria) {
+    this.#categoria = categoria;
   }
 
   set descripcion(descripcion) {
@@ -73,12 +93,12 @@ export default class Juego {
     this.#imagenMayorTamanio = imagenMayorTamanio;
   }
 
-  set genero(genero) {
-    this.#genero = genero;
+  set requisitos(requisitos) {
+    this.#requisitos = requisitos;
   }
 
-  set anio(anio) {
-    this.#anio = anio;
+  set desarrollador(desarrollador) {
+    this.#desarrollador = desarrollador;
   }
 
   set plataforma(plataforma) {
@@ -89,18 +109,22 @@ export default class Juego {
 // Ejemplo de uso de la clase Juego
 const juego = new Juego(
   "Nombre del juego",
+  3000,
+  "simulacion",
   "Descripción del juego",
   "ruta-imagen.png",
   "ruta-imagen-grande.png",
-  "Género del juego",
-  2023,
+  "Procesador 1 Ghz, espacio en disco 5 Gb, Tarjeta gráfica 128 Mb",
+  "Desarrollador del Videojuego",
   "Plataforma del juego"
 );
 
 console.log(juego.nombre); // "Nombre del juego"
+console.log(juego.precio); // "Precio del juego"
+console.log(juego.categoria); // "Categoría del juego"
 console.log(juego.descripcion); // "Descripción del juego"
 console.log(juego.imagen); // "ruta-imagen.png"
 console.log(juego.imagenMayorTamanio); // "ruta-imagen-grande.png"
-console.log(juego.genero); // "Género del juego"
-console.log(juego.anio); // 2023
+console.log(juego.requisitos); // "Requisitos del juego"
+console.log(juego.desarrollador); // "Nintendo"
 console.log(juego.plataforma); // "Plataforma del juego"

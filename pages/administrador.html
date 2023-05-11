@@ -377,8 +377,40 @@
                   placeholder="Ej: STAR WARS Jedi Survivor"
                   maxlength="60"
                   minlength="2"
+                required
+                />
+
+              </div>
+
+              <div class="mb-3">
+                <label for="precio">Precio *</label>
+                <input
+                  id="precio"
+                  type="number"
+                  class="form-control"
+                  placeholder="Ej: 5000"
+                  maxlength="8"
+                  minlength="1"
+                  required
                 />
               </div>
+
+              <div class="mb-3">
+                <label for="categoria">Categoria *</label>
+                <select id="categoria" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">Accion</option>
+                  <option value="aventura">Aventura</option>
+                  <option value="deportivos">Deportivos</option>
+                  <option value="estrategia">Estrategia</option>
+                  <option value="familiar">Familiar</option>
+                  <option value="fantasia">Fantasía</option>
+                  <option value="mmorpg">MMORPG</option>
+                  <option value="simulacion">Simulación</option>
+                  <option value="terror">Terror</option>
+                </select>
+              </div>
+
               <div class="mb-3">
                 <label for="descripcion">Descripcion *</label>
                 <textarea
@@ -388,8 +420,10 @@
                   placeholder="Ej: Cal ya no es un padawan,sino que ha madurado y se ha convertido en un poderoso caballero Jedi. Los recuerdos y las expectativas de la Orden Jedi cada vez pesan más sobre él y su cruzada contra el Imperio se vuelve más peligrosa cada segundo que pasa. Es hora de que Cal decida hasta dónde está dispuesto a llegar para salvar a sus seres queridos."
                   maxlength="200"
                   minlength="2"
+                  required
                 ></textarea>
               </div>
+
               <div class="mb-3">
                 <label for="imagen"
                   >Imagen *
@@ -404,6 +438,7 @@
                   placeholder="Ej: http://127.0.0.1:5500/pages/macross.png"
                   maxlength="120"
                   minlength="2"
+                  required
                 />
               </div>
 
@@ -415,54 +450,51 @@
                   ></label
                 >
                 <input
-                  id="imagen"
+                  id="imagenGrande"
                   type="text"
                   class="form-control"
                   placeholder="Ej: http://127.0.0.1:5500/pages/macross.png"
                   maxlength="120"
                   minlength="2"
+                  required
                 />
               </div>
 
               <div class="mb-3">
-                <label for="genero">Genero *</label>
-                <select id="genero" class="form-control">
-                  <option value="">Selecione una opcion</option>
-                  <option value="accion">Accion</option>
-                  <option value="aventura">Aventura</option>
-                  <option value="deportivos">Deportivos</option>
-                  <option value="estrategia">Estrategia</option>
-                  <option value="familiar">Familiar</option>
-                  <option value="fantasia">Fantasía</option>
-                  <option value="mmorpg">MMORPG</option>
-                  <option value="simulacion">Simulación</option>
-                  <option value="terror">Terror</option>
-                </select>
+                <label for="requisitos">Requisitos *</label>
+                <textarea
+                  id="requisitos"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Procesador 1 Ghz, espacio en disco 5 Gb, Tarjeta gráfica 128 Mb Jedi. Los recuerdos y las expectativas de la Orden Jedi cada vez pesan más sobre él y su cruzada contra el Imperio se vuelve más peligrosa cada segundo que pasa. Es hora de que Cal decida hasta dónde está dispuesto a llegar para salvar a sus seres queridos."
+                  maxlength="500"
+                  minlength="2"
+                  required
+                ></textarea>
               </div>
+
               <div class="mb-3">
-                <label for="anio">Año</label>
+                <label for="desarrollador">Desarrollador *</label>
                 <input
-                  id="anio"
+                  id="desarrollador"
                   type="text"
                   class="form-control"
-                  placeholder="Ej: 2023"
-                  maxlength="4"
-                  minlength="4"
+                  placeholder="Ej: Nintendo"
+                  maxlength="60"
+                  minlength="2"
                   required
                 />
               </div>
               <div class="mb-3">
                 <label for="genero">Plataforma *</label>
-                <select id="genero" class="form-control   required ">
+                <select id="genero" class="form-control">
                   <option value="">Selecione una opcion</option>
                   <option value="pc">PC</option>
                   <option value="playstation5">PlayStation 5</option>
                   <option value="vboxSeriesX">Xbox Series X</option>
                   <option value="nintendoSwitch">Nintendo Switch</option>
                   <option value="moviles">Móviles</option>
-                  
                 </select>
-              
               </div>
               <div
                 class="alert alert-danger mt-3 d-none"
@@ -550,7 +582,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/administrador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
     <script src="../js/administrador.js" type="module"></script>
   </body>
 </html>

@@ -18,12 +18,14 @@ const juego = new Juego(
   );
   
   console.log(juego.nombre); // "Nombre del juego"
-  console.log(juego.descripcion); // "Descripción del juego"
-  console.log(juego.imagen); // "ruta-imagen.png"
-  console.log(juego.imagenMayorTamanio); // "ruta-imagen-grande.png"
-  console.log(juego.genero); // "Género del juego"
-  console.log(juego.anio); // 2023
-  console.log(juego.plataforma); // "Plataforma del juego"
+console.log(juego.precio); // "Precio del juego"
+console.log(juego.categoria); // "Categoría del juego"
+console.log(juego.descripcion); // "Descripción del juego"
+console.log(juego.imagen); // "ruta-imagen.png"
+console.log(juego.imagenMayorTamanio); // "ruta-imagen-grande.png"
+console.log(juego.requisitos); // "Requisitos del juego"
+console.log(juego.desarrollador); // "Nintendo"
+console.log(juego.plataforma); // "Plataforma del juego"
 
 //parametros de la funcion
 function prepararFormulario (e){
