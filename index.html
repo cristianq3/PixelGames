@@ -135,9 +135,10 @@
               class="btn fs-4 d-flex"
               data-bs-toggle="modal"
               data-bs-target="#modalLogin"
+              id="btnIngresoModal"
             >
               <i class="bi bi-person-circle me-3 me-lg-0"> </i>
-              <p class="d-block d-lg-none">Ingresá</p>
+              Ingresá
             </button>
 
             <!-- Modal -->
@@ -171,7 +172,7 @@
                           maxlength="254 "
                           minlength="4"
                           class="form-control"
-                          id="floatingInput"
+                          id="usuario"
                           placeholder="nombre@mail.com"
                           required
                         />
@@ -182,7 +183,7 @@
                           required
                           type="password"
                           class="form-control"
-                          id="floatingPassword"
+                          id="contrasenia"
                           placeholder="Password"
                           maxlength="128"
                           minlength="6"
@@ -323,5 +324,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/app.js"></script>
+    <script src="/js/login.js"></script>
   </body>
 </html>

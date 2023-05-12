@@ -1,31 +1,32 @@
+// Se crea objeto User para agregar datos del administrador.
+const UsuarioAdmin = {
+  usuario: "admin@pixelgames.com",
+  contrasenia: "Admin123",
+};
+//boton administrador para poner D-none
 const btnAdministrador = document.getElementById("btnAdministradorNavbar");
+//Form de Login
 
-// Se crea la class User para agregar datos del administrador.
+let btnIngresar = document.getElementById("btnIngresar");
 
-class User {
-  #usuario;
-  #contrasenia;
+//Eventos
+btnIngresar.addEventListener("submit", function (e) {
+  e.preventDefault();
+  logearUsuario();
+});
 
-  constructor(usuario, contrasenia) {
-    this.#usuario = "admin@pixelgames.com";
-    this.#contrasenia = "12345678";
-  }
+function logearUsuario() {
+  //Traer los Valores de user y contraseña.
+  let usuarioIngresado = document.getElementById("usuario").value;
+  let contraseniaIngresada = document.getElementById("contrasenia").value;
+  //Validar si son datos correctos.
+  //Comparar si son los mismos del admin
+  //
 
-  get usuario() {
-    return this.#usuario;
-  }
-
-  set usuario(newUser) {
-    this.#usuario = newUser;
-  }
-
-  get contrasenia() {
-    return this.#contrasenia;
-  }
-
-  set contrasenia(newPass) {
-    this.#contrasenia = newPass;
-  }
+  //mostrar mensaje de logueado con exito. y
+  //mostrar btnAdministrador () sacar class d-none)
+  //cambiar el InnerHtml del boton con id btnIngresoModal cambiar a Salir
+  //cerrar Modal
 }
 
-
+console.log(UsuarioAdmin.usuario, UsuarioAdmin.contrasenia);
