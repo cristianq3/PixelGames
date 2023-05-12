@@ -1,6 +1,7 @@
 import Juego from "./classVideojuego.js";
 
 let formularioAdminVideoJuego = document.getElementById("formVideoJuego");
+let listaVideoJuegos = [];
 
 //Manejador de Eventos
 formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
@@ -30,8 +31,12 @@ console.log(juego.plataforma); // "Plataforma del juego"
 function prepararFormulario(e) {
   e.preventDefault();
   console.log("se esta ejecutando la creacion del videoJuego");
+  crearVideoJuego();
+}
 
-  const juego1 = new Juego(
+function crearVideoJuego() {
+  // se crea el objeto Vj
+  const juegoNuevo = new Juego(
     "Star Wars Jedi: Survivor",
     9000,
     "accion y aventuras",
@@ -40,5 +45,13 @@ function prepararFormulario(e) {
     "Respawn Entertainment",
     "Plataforma"
   );
-  console.log(juego1); // "Star Wars Jedi: Survivor"
+  console.log(juegoNuevo); // "Star Wars Jedi: Survivor"
+
+  //agregamos el videojuego en un array
+  listaVideoJuegos.push(juegoNuevo);
+  console.log(listaVideoJuegos);
+  //lo almaceno en el localstorage
+  localStorage.setItem('listaVideoJuegos', JSON.stringify(listaVideoJuegos))
+
+  //luego cierro el modal
 }

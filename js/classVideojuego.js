@@ -104,6 +104,19 @@ export default class Juego {
   set plataforma(plataforma) {
     this.#plataforma = plataforma;
   }
+  toJSON() {
+    return {
+      codigo: this.codigo,
+      nombre: this.nombre,
+      precio: this.precio,
+      categoria: this.categoria,
+      descripcion: this.descripcion,
+      imagen: this.imagen,
+      imagenMayorTamanio: this.imagenMayorTamanio,
+      requisitos: this.requisitos,
+      desarrollador: this.desarrollador,
+    };
+  }
 }
 
 // Ejemplo de uso de la clase Juego
