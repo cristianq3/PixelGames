@@ -39,33 +39,33 @@ header {
 @media (max-width: 640px) {
   /* Posicionamiento de imagen principal y letras */
   .HeroPng {
-    width: fit-content;
-    top: 25%;
-    left: 20%;
+    width: 100%;
+    top: 15%;
+    left: 10%;
     font-size: 15px;
   }
   .contenedorTituloydetalle {
-    width: 280px;
+    width: fit-content;
 }
   .TituloJuego {
-    font-size: 50px;
+    font-size: 4rem;
+    
   }
   .fraseJuego {
-    font-size: 9px;
+    margin-top: -29px;
+    font-size: 7vw;
+    width: fit-content;
   }
-  .descripcionJuego {
-    font-size: 15px;
-    width: 100%;
-  }
+
   .btn-warning {
-    width: 100%;
+    width: 50%;
     text-shadow: 2px 2px 9px #000000;
   }
   .heroSection .ImgHero {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: 30%;
+    height: 50vh;
+    object-fit:cover;
+    object-position: 29%;
   }
 
 
