@@ -8,9 +8,20 @@ function validarCantidadCaracteres(texto, min, max) {
   }
 }
 
-export function sumarioValidacion (titulo,precio, categoria,descripcion, imagen, imagenGrande, requisitos, desarrollador, plataforma){
-let resumen= '';
-if (!validarCantidadCaracteres(titulo, 2, 100)){
-    resumen+= 'El titulo debe tener entre 2 y 100 caracteres.'
-}
+export function sumarioValidacion(
+  nombre,
+  precio,
+  categoria,
+  descripcion,
+  imagen,
+  imagenGrande,
+  requisitos,
+  desarrollador,
+  plataforma
+) {
+  let resumen = "";
+  if (!validarCantidadCaracteres(nombre, 2, 100)) {
+    resumen += "El titulo debe tener entre 2 y 100 caracteres";
+  }
+  return resumen;
 }

@@ -64,18 +64,20 @@ function prepararFormulario(e) {
 
 function crearVideoJuego() {
   //validacion del formulario
-  let resumen = sumarioValidacion("algun texto");
+  let resumen = sumarioValidacion("nombre.value");
   if (resumen.length === 0) {
     //los datos son validos
     // se crea el objeto Vj
     const juegoNuevo = new Juego(
-      "Star Wars Jedi: Survivor",
-      9000,
-      "accion y aventuras",
-      "La historia de Cal Kestis continúa en Star Wars Jedi: Survivor™, un juego de acción y aventuras en tercera persona desarrollado por Respawn Entertainment en colaboración con Lucasfilm Games. Este título para un jugador centrado en la historia retoma la aventura 5 años después de los acontecimientos de Star Wars Jedi: Fallen Order™ y sigue la lucha cada vez más desesperada de Cal mientras la galaxia se hunde en la oscuridad. Empujado al exilio por culpa del Imperio, deberá guardarse de nuevas y viejas amenazas. Como uno de los últimos Caballeros Jedi, debe hacer frente a los tiempos más oscuros de la galaxia, pero ¿hasta dónde está dispuesto a llegar para protegerse a sí mismo, a su tripulación y al legado de la Orden Jedi?",
-      "Requisitos mínimos:Sistema operativo: Windows 10 de 64 bits. 02.	RAM: 8 GB. 03.	Características de CPU:  4 núcleos / 8 subprocesos. 04.	Procesador* (AMD):  Ryzen 5 1400. 05.	Tarjeta grafica** (AMD):  Radeon RX 580. 06.	Características de GPU:  DX12, VRAM de 8 GB  07.	Almacenamiento:  155 GB. 08.*Procesador (alternativo): Intel Core i7-7700. 09.	**Tarjeta gráfica (alternativa): Nvidia GTX 1070",
-      "Respawn Entertainment",
-      "Plataforma"
+      nombre.value,
+      precio.value,
+      descripcion.value,
+      imagen.value,
+      imagenMayorTamanio.value,
+      requisitos.value,
+      desarrollador.value,
+      plataforma.value
+    
     );
     console.log(juegoNuevo); // "Star Wars Jedi: Survivor"
 
@@ -88,7 +90,7 @@ function crearVideoJuego() {
     //luego cierro el modal
   } else {
     //mostrar cartel de error
-    let alerta = document.getElementById("alerta");
+    let alerta = document.getElementById('alerta');
     alerta.innerHTML = resumen;
     alerta.className = "alert alert-danger mt-3";
   }
