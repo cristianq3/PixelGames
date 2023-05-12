@@ -1,10 +1,38 @@
 import Juego from "./classVideojuego.js";
+import { sumarioValidacion } from "./helpers.js";
 
 let formularioAdminVideoJuego = document.getElementById("formVideoJuego");
 let listaVideoJuegos = [];
 
+let codigo = document.getElementById("codigo"),
+  nombre = document.getElementById("nombre"),
+  precio = document.getElementById("precio"),
+  categoria = document.getElementById("categoria"),
+  descripcion = document.getElementById("descripcion"),
+  imagen = document.getElementById("imagen"),
+  imagenGrande = document.getElementById("imagenGrande"),
+  requisitos = document.getElementById("requisitos"),
+  desarrollador = document.getElementById("desarrollador"),
+  plataforma = document.getElementById("plataforma");
+
+// function validarGenero(genero) {
+//     console.log(genero);
+//     if (
+//       genero === 'accion' ||
+//       genero === 'drama' ||
+//       genero === 'comedia' ||
+//       genero === 'aventura'
+//     ) {
+//       console.log('El género es un valor de la lista desplegable');
+//       return true;
+//     } else {
+//       console.log('El género no es un valor de la lista desplegable');
+//       return false;
+//     }
+//   }
+
 //Manejador de Eventos
-formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
+// formularioAdminVideoJuego.addEventListener('submit', prepararFormulario);
 
 // Ejemplo de uso de la clase Juego
 const juego = new Juego(
@@ -35,23 +63,33 @@ function prepararFormulario(e) {
 }
 
 function crearVideoJuego() {
-  // se crea el objeto Vj
-  const juegoNuevo = new Juego(
-    "Star Wars Jedi: Survivor",
-    9000,
-    "accion y aventuras",
-    "La historia de Cal Kestis continúa en Star Wars Jedi: Survivor™, un juego de acción y aventuras en tercera persona desarrollado por Respawn Entertainment en colaboración con Lucasfilm Games. Este título para un jugador centrado en la historia retoma la aventura 5 años después de los acontecimientos de Star Wars Jedi: Fallen Order™ y sigue la lucha cada vez más desesperada de Cal mientras la galaxia se hunde en la oscuridad. Empujado al exilio por culpa del Imperio, deberá guardarse de nuevas y viejas amenazas. Como uno de los últimos Caballeros Jedi, debe hacer frente a los tiempos más oscuros de la galaxia, pero ¿hasta dónde está dispuesto a llegar para protegerse a sí mismo, a su tripulación y al legado de la Orden Jedi?",
-    "Requisitos mínimos:Sistema operativo: Windows 10 de 64 bits. 02.	RAM: 8 GB. 03.	Características de CPU:  4 núcleos / 8 subprocesos. 04.	Procesador* (AMD):  Ryzen 5 1400. 05.	Tarjeta grafica** (AMD):  Radeon RX 580. 06.	Características de GPU:  DX12, VRAM de 8 GB  07.	Almacenamiento:  155 GB. 08.*Procesador (alternativo): Intel Core i7-7700. 09.	**Tarjeta gráfica (alternativa): Nvidia GTX 1070",
-    "Respawn Entertainment",
-    "Plataforma"
-  );
-  console.log(juegoNuevo); // "Star Wars Jedi: Survivor"
+  //validacion del formulario
+  let resumen = sumarioValidacion("algun texto");
+  if (resumen.length === 0) {
+    //los datos son validos
+    // se crea el objeto Vj
+    const juegoNuevo = new Juego(
+      "Star Wars Jedi: Survivor",
+      9000,
+      "accion y aventuras",
+      "La historia de Cal Kestis continúa en Star Wars Jedi: Survivor™, un juego de acción y aventuras en tercera persona desarrollado por Respawn Entertainment en colaboración con Lucasfilm Games. Este título para un jugador centrado en la historia retoma la aventura 5 años después de los acontecimientos de Star Wars Jedi: Fallen Order™ y sigue la lucha cada vez más desesperada de Cal mientras la galaxia se hunde en la oscuridad. Empujado al exilio por culpa del Imperio, deberá guardarse de nuevas y viejas amenazas. Como uno de los últimos Caballeros Jedi, debe hacer frente a los tiempos más oscuros de la galaxia, pero ¿hasta dónde está dispuesto a llegar para protegerse a sí mismo, a su tripulación y al legado de la Orden Jedi?",
+      "Requisitos mínimos:Sistema operativo: Windows 10 de 64 bits. 02.	RAM: 8 GB. 03.	Características de CPU:  4 núcleos / 8 subprocesos. 04.	Procesador* (AMD):  Ryzen 5 1400. 05.	Tarjeta grafica** (AMD):  Radeon RX 580. 06.	Características de GPU:  DX12, VRAM de 8 GB  07.	Almacenamiento:  155 GB. 08.*Procesador (alternativo): Intel Core i7-7700. 09.	**Tarjeta gráfica (alternativa): Nvidia GTX 1070",
+      "Respawn Entertainment",
+      "Plataforma"
+    );
+    console.log(juegoNuevo); // "Star Wars Jedi: Survivor"
 
-  //agregamos el videojuego en un array
-  listaVideoJuegos.push(juegoNuevo);
-  console.log(listaVideoJuegos);
-  //lo almaceno en el localstorage
-  localStorage.setItem('listaVideoJuegos', JSON.stringify(listaVideoJuegos))
+    //agregamos el videojuego en un array
+    listaVideoJuegos.push(juegoNuevo);
+    console.log(listaVideoJuegos);
+    //lo almaceno en el localstorage
+    localStorage.setItem("listaVideoJuegos", JSON.stringify(listaVideoJuegos));
 
-  //luego cierro el modal
+    //luego cierro el modal
+  } else {
+    //mostrar cartel de error
+    let alerta = document.getElementById("alerta");
+    alerta.innerHTML = resumen;
+    alerta.className = "alert alert-danger mt-3";
+  }
 }
