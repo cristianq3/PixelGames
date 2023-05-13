@@ -8,7 +8,6 @@ function validarCantidadCaracteres(texto, min, max) {
   }
 }
 
-
 // function validarGenero(genero) {
 //     console.log(genero);
 //     if (
@@ -25,23 +24,47 @@ function validarCantidadCaracteres(texto, min, max) {
 //     }
 //   }
 
+function validarPrecio(precio) {
+  // expresión regular
+  let patron = /^\d{2,8}$/;
+
+  ///^\d+(\.\d{1,8})?$/;
+
+  // Comparamos el precio con el patrón utilizando el método test()
+  if (patron.test(precio)) {
+    console.log("la expresion regular funciona");
+    return true;
+  } else {
+    console.log("la expresion regular fallo");
+    return false;
+  }
+}
 
 export function sumarioValidacion(
   nombre,
-//   precio,
-//   categoria,
-//   descripcion,
-//   imagen,
-//   imagenGrande,
-//   requisitos,
-//   desarrollador,
-//   plataforma
+  descripcion,
+  precio
+  //   categoria,
+  //descripcion,
+  //   imagen,
+  //   imagenGrande,
+  //   requisitos,
+  //   desarrollador,
+  //   plataforma
 ) {
   let resumen = "";
   if (!validarCantidadCaracteres(nombre, 2, 100)) {
-    resumen += "El titulo debe tener entre 2 y 100 caracteres";
+    resumen += "El titulo debe tener entre 2 y 100 caracteres <br>";
   }
+
+  if (!validarCantidadCaracteres(descripcion, 2, 200)) {
+    resumen += "La descripción debe tener entre 2 y 200 caracteres <br>";
+  }
+
+  if (!validarPrecio(precio)) {
+    resumen +=
+      "El precio debe tener entre 2 y 8 caracteres numericos y sin puntos. <br>";
+  }
+
   return resumen;
 }
-
-
