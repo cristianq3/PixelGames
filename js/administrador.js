@@ -15,21 +15,6 @@ let codigo = document.getElementById("codigo"),
   desarrollador = document.getElementById("desarrollador"),
   plataforma = document.getElementById("plataforma");
 
-// function validarGenero(genero) {
-//     console.log(genero);
-//     if (
-//       genero === 'accion' ||
-//       genero === 'drama' ||
-//       genero === 'comedia' ||
-//       genero === 'aventura'
-//     ) {
-//       console.log('El género es un valor de la lista desplegable');
-//       return true;
-//     } else {
-//       console.log('El género no es un valor de la lista desplegable');
-//       return false;
-//     }
-//   }
 
 //Manejador de Eventos
 formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
