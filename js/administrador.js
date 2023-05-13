@@ -15,6 +15,12 @@ let codigo = document.getElementById("codigo"),
   desarrollador = document.getElementById("desarrollador"),
   plataforma = document.getElementById("plataforma");
 
+//modal funcion cerrar formulario
+let modalFormVideojuego = new bootstrap.Modal(
+  document.getElementById("modalVideoJuego")
+);
+console.log(modalFormVideojuego);
+
 //Manejador de Eventos
 formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
 
@@ -84,10 +90,15 @@ function crearVideoJuego() {
     localStorage.setItem("listaVideoJuegos", JSON.stringify(listaVideoJuegos));
 
     //luego cierro el modal
+
+    limpiarFormulario();
   } else {
     //mostrar cartel de error
     let alerta = document.getElementById("alerta");
     alerta.innerHTML = resumen;
     alerta.className = "alert alert-danger mt-3";
   }
+}
+function limpiarFormulario() {
+  formularioAdminVideoJuego.requestFullscreen();
 }
