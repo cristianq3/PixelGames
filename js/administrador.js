@@ -15,22 +15,6 @@ let codigo = document.getElementById("codigo"),
   desarrollador = document.getElementById("desarrollador"),
   plataforma = document.getElementById("plataforma");
 
-// function validarGenero(genero) {
-//     console.log(genero);
-//     if (
-//       genero === 'accion' ||
-//       genero === 'drama' ||
-//       genero === 'comedia' ||
-//       genero === 'aventura'
-//     ) {
-//       console.log('El género es un valor de la lista desplegable');
-//       return true;
-//     } else {
-//       console.log('El género no es un valor de la lista desplegable');
-//       return false;
-//     }
-//   }
-
 //Manejador de Eventos
 formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
 
@@ -66,7 +50,7 @@ function prepararFormulario(e) {
 
 function crearVideoJuego() {
   //validacion del formulario
-  let resumen = sumarioValidacion("nombre.value");
+  let resumen = sumarioValidacion(nombre.value);
   if (resumen.length === 0) {
     //los datos son validos
     // se crea el objeto Vj
