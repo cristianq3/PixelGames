@@ -50,7 +50,7 @@ function prepararFormulario(e) {
 
 function crearVideoJuego() {
   //validacion del formulario
-  let resumen = sumarioValidacion(nombre.value, descripcion.value, precio.value);
+  let resumen = sumarioValidacion(nombre.value, descripcion.value, precio.value, imagen.value, imagenMayorTamanio.value);
   if (resumen.length === 0) {
     //los datos son validos
     // se crea el objeto Vj

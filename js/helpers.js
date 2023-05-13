@@ -25,10 +25,8 @@ function validarCantidadCaracteres(texto, min, max) {
 //   }
 
 function validarPrecio(precio) {
-  // expresión regular
-  let patron = /^\d{2,8}$/;
-
-  ///^\d+(\.\d{1,8})?$/;
+  //   // expresión regular
+  let patron = /^\d{1,8}$/;
 
   // Comparamos el precio con el patrón utilizando el método test()
   if (patron.test(precio)) {
@@ -39,18 +37,37 @@ function validarPrecio(precio) {
     return false;
   }
 }
+function validarURLImagen(imagen) {
+  // expresión regular
+  let patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)$/;
 
+  if (patron.test(imagen)) {
+    console.log("la expresion regular de imagen funciona");
+    return true;
+  } else {
+    console.log("la expresion regular de imagen fallo");
+    return false;
+  }
+}
+
+function validarURLImagenMayorTamanio(imagenMayorTamanio) {
+  // expresión regular
+  let patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)$/;
+
+  if (patron.test(imagenMayorTamanio)) {
+    console.log("la expresion regular de imagen funciona");
+    return true;
+  } else {
+    console.log("la expresion regular de imagen fallo");
+    return false;
+  }
+}
 export function sumarioValidacion(
   nombre,
   descripcion,
-  precio
-  //   categoria,
-  //descripcion,
-  //   imagen,
-  //   imagenGrande,
-  //   requisitos,
-  //   desarrollador,
-  //   plataforma
+  precio,
+  imagen,
+  imagenMayorTamanio
 ) {
   let resumen = "";
   if (!validarCantidadCaracteres(nombre, 2, 100)) {
@@ -64,6 +81,16 @@ export function sumarioValidacion(
   if (!validarPrecio(precio)) {
     resumen +=
       "El precio debe tener entre 2 y 8 caracteres numericos y sin puntos. <br>";
+  }
+
+  if (!validarURLImagen(imagen)) {
+    resumen +=
+      "La imagen de la pelicula debe ser una URL valida terminada en (.jpg, .png, .gif) <br>";
+  }
+
+  if (!validarURLImagenMayorTamanio(imagenMayorTamanio)) {
+    resumen +=
+      "La imagen de la pelicula debe ser una URL valida terminada en (.jpg, .png, .gif) <br>";
   }
 
   return resumen;
