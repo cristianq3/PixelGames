@@ -99,6 +99,23 @@ function validarDesarrollador(desarrollador, min, max) {
   }
 }
 
+function validarPlataforma(plataforma) {
+  console.log(plataforma);
+  if (
+    plataforma === "PC" ||
+    plataforma === "playstation5" ||
+    plataforma === "vboxSeriesX" ||
+    plataforma === "nintendoSwitch" ||
+    plataforma === "moviles"
+  ) {
+    console.log("La plataforma es un valor de la lista desplegable");
+    return true;
+  } else {
+    console.log("La plataforma no es un valor de la lista desplegable");
+    return false;
+  }
+}
+
 export function sumarioValidacion(
   nombre,
   precio,
@@ -107,7 +124,8 @@ export function sumarioValidacion(
   imagen,
   imagenMayorTamanio,
   requisitos,
-  desarrollador
+  desarrollador,
+  plataforma
 ) {
   let resumen = "";
   if (!validarCantidadCaracteres(nombre, 2, 100)) {
@@ -119,8 +137,8 @@ export function sumarioValidacion(
       "El precio debe tener entre 2 y 8 caracteres numericos y sin puntos. <br>";
   }
 
-  if (!validarCategoria(categoria)) {
-    resumen += "Debe seleccionar una de las categorías sugeridas. <br>";
+  if (!validarCategoria(categoria, 2, 60)) {
+    resumen += "Debe seleccionar una de las categorías sugeridas en campo Categoría. <br>";
   }
 
   if (!validarDescripcion(descripcion, 2, 500)) {
@@ -145,5 +163,11 @@ export function sumarioValidacion(
     resumen +=
       "El campo desarrollador debe contener entre 2 y 60 caracteres. <br>";
   }
+
+  if (!validarPlataforma(plataforma, 2, 60)) {
+    resumen +=
+    "Debe seleccionar una de las categorías sugeridas en el campo Plataforma. <br>";
+  }
+
   return resumen;
 }

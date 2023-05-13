@@ -58,7 +58,8 @@ function crearVideoJuego() {
     imagen.value,
     imagenMayorTamanio.value,
     requisitos.value,
-    desarrollador.value
+    desarrollador.value,
+    plataforma.value
   );
   if (resumen.length === 0) {
     //los datos son validos
