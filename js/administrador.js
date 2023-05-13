@@ -20,9 +20,11 @@ let modalFormVideojuego = new bootstrap.Modal(
   document.getElementById("modalVideoJuego")
 );
 console.log(modalFormVideojuego);
+let btnCrearVideoJuego = document.getElementById("btnCrearVideoJuego");
 
 //Manejador de Eventos
 formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
+btnCrearVideoJuego.addEventListener("click", mostrarModalVideoJuego);
 
 // Ejemplo de uso de la clase Juego
 const juego = new Juego(
@@ -92,6 +94,7 @@ function crearVideoJuego() {
     //luego cierro el modal
 
     limpiarFormulario();
+    modalFormVideojuego.hide();
   } else {
     //mostrar cartel de error
     let alerta = document.getElementById("alerta");
@@ -101,4 +104,8 @@ function crearVideoJuego() {
 }
 function limpiarFormulario() {
   formularioAdminVideoJuego.requestFullscreen();
+}
+
+function mostrarModalVideoJuego() {
+  modalFormVideojuego.show();
 }
