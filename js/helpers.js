@@ -43,6 +43,16 @@ function validarCategoria(categoria) {
   }
 }
 
+function validarDescripcion(descripcion, min, max) {
+  if (descripcion.length >= min && descripcion.length <= max) {
+    console.log("dato correcto");
+    return true;
+  } else {
+    console.log("dato erroneo");
+    return false;
+  }
+}
+
 function validarURLImagen(imagen) {
   // expresión regular
   let patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)$/;
@@ -68,13 +78,36 @@ function validarURLImagenMayorTamanio(imagenMayorTamanio) {
     return false;
   }
 }
+
+function validarRequisitos(requisitos, min, max) {
+  if (requisitos.length >= min && requisitos.length <= max) {
+    console.log("dato correcto");
+    return true;
+  } else {
+    console.log("dato erroneo");
+    return false;
+  }
+}
+
+function validarDesarrollador(desarrollador, min, max) {
+  if (desarrollador.length >= min && desarrollador.length <= max) {
+    console.log("dato correcto");
+    return true;
+  } else {
+    console.log("dato erroneo");
+    return false;
+  }
+}
+
 export function sumarioValidacion(
   nombre,
   precio,
   categoria,
   descripcion,
   imagen,
-  imagenMayorTamanio
+  imagenMayorTamanio,
+  requisitos,
+  desarrollador
 ) {
   let resumen = "";
   if (!validarCantidadCaracteres(nombre, 2, 100)) {
@@ -90,8 +123,8 @@ export function sumarioValidacion(
     resumen += "Debe seleccionar una de las categorías sugeridas. <br>";
   }
 
-  if (!validarCantidadCaracteres(descripcion, 2, 200)) {
-    resumen += "La descripción debe tener entre 2 y 200 caracteres. <br>";
+  if (!validarDescripcion(descripcion, 2, 500)) {
+    resumen += "La descripción debe tener entre 2 y 500 caracteres. <br>";
   }
 
   if (!validarURLImagen(imagen)) {
@@ -104,5 +137,13 @@ export function sumarioValidacion(
       "La imagen de mayor tamaño de la pelicula debe ser una URL valida terminada en (.jpg, .png, .gif). <br>";
   }
 
+  if (!validarRequisitos(requisitos, 2, 500)) {
+    resumen += "Los requisitos deben contener entre 2 y 500 caracteres. <br>";
+  }
+
+  if (!validarDesarrollador(desarrollador, 2, 60)) {
+    resumen +=
+      "El campo desarrollador debe contener entre 2 y 60 caracteres. <br>";
+  }
   return resumen;
 }

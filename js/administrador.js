@@ -52,11 +52,13 @@ function crearVideoJuego() {
   //validacion del formulario
   let resumen = sumarioValidacion(
     nombre.value,
-    descripcion.value,
     precio.value,
     categoria.value,
+    descripcion.value,
     imagen.value,
-    imagenMayorTamanio.value
+    imagenMayorTamanio.value,
+    requisitos.value,
+    desarrollador.value
   );
   if (resumen.length === 0) {
     //los datos son validos
