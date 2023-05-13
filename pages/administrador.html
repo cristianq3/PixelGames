@@ -355,7 +355,11 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="formVideoJuego">
+            <form
+              id="formVideoJuego"
+              class="row g-3 needs-validation"
+              novalidate
+            >
               <div class="mb-3">
                 <label for="codigo">Código</label>
                 <input
@@ -442,14 +446,14 @@
               </div>
 
               <div class="mb-3">
-                <label for="imagenGrande"
+                <label for="imagenMayorTamanio"
                   >Imagen mayor tamaño*
                   <small class="text-secondary">
                     (URL con formato .png, .jpg o gif)</small
                   ></label
                 >
                 <input
-                  id="imagenGrande"
+                  id="imagenMayorTamanio"
                   type="text"
                   class="form-control"
                   placeholder="Ej: http://127.0.0.1:5500/pages/macross.png"
@@ -485,8 +489,8 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="genero">Plataforma *</label>
-                <select id="genero" class="form-control">
+                <label for="plataforma">Plataforma *</label>
+                <select id="plataforma" class="form-control">
                   <option value="">Selecione una opcion</option>
                   <option value="pc">PC</option>
                   <option value="playstation5">PlayStation 5</option>

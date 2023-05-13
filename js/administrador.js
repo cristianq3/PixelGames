@@ -10,7 +10,7 @@ let codigo = document.getElementById("codigo"),
   categoria = document.getElementById("categoria"),
   descripcion = document.getElementById("descripcion"),
   imagen = document.getElementById("imagen"),
-  imagenGrande = document.getElementById("imagenGrande"),
+  imagenMayorTamanio = document.getElementById("imagenMayorTamanio"),
   requisitos = document.getElementById("requisitos"),
   desarrollador = document.getElementById("desarrollador"),
   plataforma = document.getElementById("plataforma");
@@ -32,16 +32,18 @@ let codigo = document.getElementById("codigo"),
 //   }
 
 //Manejador de Eventos
-// formularioAdminVideoJuego.addEventListener('submit', prepararFormulario);
+formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
 
 // Ejemplo de uso de la clase Juego
 const juego = new Juego(
   "Nombre del juego",
+  500,
+  "Simulación",
   "Descripción del juego",
   "ruta-imagen.png",
   "ruta-imagen-grande.png",
-  "Género del juego",
-  2023,
+  "Requisitos del juego",
+  "Desarrollador del juego",
   "Plataforma del juego"
 );
 
@@ -71,13 +73,13 @@ function crearVideoJuego() {
     const juegoNuevo = new Juego(
       nombre.value,
       precio.value,
+      categoria.value,
       descripcion.value,
       imagen.value,
       imagenMayorTamanio.value,
       requisitos.value,
       desarrollador.value,
       plataforma.value
-    
     );
     console.log(juegoNuevo); // "Star Wars Jedi: Survivor"
 
@@ -90,7 +92,7 @@ function crearVideoJuego() {
     //luego cierro el modal
   } else {
     //mostrar cartel de error
-    let alerta = document.getElementById('alerta');
+    let alerta = document.getElementById("alerta");
     alerta.innerHTML = resumen;
     alerta.className = "alert alert-danger mt-3";
   }
