@@ -7,7 +7,7 @@ let listaVideoJuegos =
 if (listaVideoJuegos.length !== 0) {
   listaVideoJuegos = listaVideoJuegos.map(
     (videoJuego) =>
-      new videoJuego(
+      new Juego(
         videoJuego.nombre,
         videoJuego.precio,
         videoJuego.categoria,
