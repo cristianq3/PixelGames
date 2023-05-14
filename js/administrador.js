@@ -1,8 +1,29 @@
 import Juego from "./classVideojuego.js";
 import { sumarioValidacion } from "./helpers.js";
 
+//variables globales
+let listaVideoJuegos =
+  JSON.parse(localStorage.getItem("listaVideoJuegos")) || [];
+if (listaVideoJuegos.length !== 0) {
+  listaVideoJuegos = listaVideoJuegos.map(
+    (videoJuego) =>
+      new videoJuego(
+        videoJuego.nombre,
+        videoJuego.precio,
+        videoJuego.categoria,
+        videoJuego.descripcion,
+        videoJuego.imagen,
+        videoJuego.imagenMayorTamanio,
+        videoJuego.requisitos,
+        videoJuego.desarrollador,
+        videoJuego.plataforma
+      )
+  );
+}
+
+console.log(listaVideoJuegos);
+
 let formularioAdminVideoJuego = document.getElementById("formVideoJuego");
-let listaVideoJuegos = [];
 
 let codigo = document.getElementById("codigo"),
   nombre = document.getElementById("nombre"),
@@ -39,17 +60,51 @@ const juego = new Juego(
   "Plataforma del juego"
 );
 
-console.log(juego.nombre); // "Nombre del juego"
-console.log(juego.precio); // "Precio del juego"
-console.log(juego.categoria); // "Categoría del juego"
-console.log(juego.descripcion); // "Descripción del juego"
-console.log(juego.imagen); // "ruta-imagen.png"
-console.log(juego.imagenMayorTamanio); // "ruta-imagen-grande.png"
-console.log(juego.requisitos); // "Requisitos del juego"
-console.log(juego.desarrollador); // "Nintendo"
-console.log(juego.plataforma); // "Plataforma del juego"
+// console.log(juego.nombre); // "Nombre del juego"
+// console.log(juego.precio); // "Precio del juego"
+// console.log(juego.categoria); // "Categoría del juego"
+// console.log(juego.descripcion); // "Descripción del juego"
+// console.log(juego.imagen); // "ruta-imagen.png"
+// console.log(juego.imagenMayorTamanio); // "ruta-imagen-grande.png"
+// console.log(juego.requisitos); // "Requisitos del juego"
+// console.log(juego.desarrollador); // "Nintendo"
+// console.log(juego.plataforma); // "Plataforma del juego"
 
 //parametros de la funcion
+
+cargaInicial();
+
+function cargaInicial() {
+  if (listaVideoJuegos.length > 0) {
+    //se dibuja la fila
+    listaVideoJuegos.map((videoJuego) => crearFila(videoJuego));
+  }
+}
+
+function crearFila(videoJuego) {
+  let tbody = document.querySelector("#tablaVideoJuego");
+  tbody.innerHTML += `<tr>
+  <td scope="col">1</td>
+  <td> ${videoJuego.nombre}</td>
+  <td class="celdaTamanio text-truncate">
+    ${videoJuego.descripcion}
+  </td>
+  <td class="celdaTamanio text-truncate">
+    ${videoJuego.imagen}
+  </td>
+  <td>${videoJuego.categoria}</td>
+  <td>${videoJuego.plataforma}</td>
+  <td>
+    <button class="btn btn-warning">
+      <i class="bi bi-pencil-square"></i>
+    </button>
+    <button class="btn btn-danger">
+      <i class="bi bi-x-square"></i>
+    </button>
+  </td>
+</tr>`;
+}
+
 function prepararFormulario(e) {
   e.preventDefault();
   console.log("se esta ejecutando la creacion del videoJuego");
