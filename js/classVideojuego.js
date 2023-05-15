@@ -34,6 +34,11 @@ export default class Juego {
   }
 
   // Métodos para acceder a las propiedades privadas (getters)
+
+  get codigo() {
+    return this.#codigo;
+  }
+  
   get nombre() {
     return this.#nombre;
   }
@@ -70,6 +75,10 @@ export default class Juego {
   }
 
   // Métodos para modificar las propiedades privadas (setters)
+  set codigo(codigo) {
+    this.#codigo = codigo;
+  }
+
   set nombre(nombre) {
     this.#nombre = nombre;
   }

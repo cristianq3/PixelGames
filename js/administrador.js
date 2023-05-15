@@ -8,6 +8,7 @@ if (listaVideoJuegos.length !== 0) {
   listaVideoJuegos = listaVideoJuegos.map(
     (videoJuego) =>
       new Juego(
+        videoJuego.codigo,
         videoJuego.nombre,
         videoJuego.precio,
         videoJuego.categoria,
@@ -107,6 +108,7 @@ function crearVideoJuego() {
     //los datos son validos
     // se crea el objeto Vj
     const juegoNuevo = new Juego(
+      undefined,
       nombre.value,
       precio.value,
       categoria.value,
