@@ -54,7 +54,9 @@ cargaInicial();
 function cargaInicial() {
   if (listaVideoJuegos.length > 0) {
     //se dibuja la fila
-    listaVideoJuegos.map((videoJuego) => crearFila(videoJuego));
+    listaVideoJuegos.map((videoJuego, longitud) =>
+      crearFila(videoJuego, longitud + 1)
+    );
   }
 }
 
@@ -143,3 +145,5 @@ function limpiarFormulario() {
 function mostrarModalVideoJuego() {
   modalFormVideojuego.show();
 }
+
+console.log();
