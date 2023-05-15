@@ -20,12 +20,9 @@ header {
   
 }
 
-
-
 main {
   font-family: 'Rubik Distressed', cursive;
   color: #fff;
-  background-color: rgb(39, 39, 39);
 }
 
 .error {
@@ -38,12 +35,6 @@ main {
 h1 {
   font-size: 180px;
   color: #8a8a8a;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 36px;
-  color: #333;
   margin-bottom: 20px;
 }
 
@@ -80,3 +71,4 @@ footer {
   .linkSolo:hover {
     color: rgb(238, 209, 19);
   }
+
