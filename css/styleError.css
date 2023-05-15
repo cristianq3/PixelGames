@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
 
 /* Fuente general: Roboto*/
@@ -14,36 +14,25 @@ body {
     flex-direction: column;
   }
   
-
-header {
-  font-family: "Roboto Condensed", sans-serif;
-  
-}
-
-
-
-main {
-  font-family: 'Rubik Distressed', cursive;
-  color: #fff;
-  background-color: rgb(39, 39, 39);
-}
-
 .error {
-  max-width: 800px;
+  max-width: fit-content;
   margin: 0 auto;
   padding: 80px 40px;
   text-align: center;
+
+  color: #fff;
 }
 
 h1 {
-  font-size: 180px;
+  font-size: 280px;
   color: #8a8a8a;
   margin-bottom: 20px;
+  font-family: 'Rubik Distressed', cursive;
 }
 
 h2 {
   font-size: 36px;
-  color: #333;
+
   margin-bottom: 20px;
 }
 
@@ -67,16 +56,14 @@ p a {
 p a:hover {
   background-color: #222;
 }
-footer {
-    box-shadow: 2px 5px 19px rgba(0, 0, 0, 0.495);
-    font-family: "Roboto Condensed", sans-serif;
+
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 100px;
+    color: #8a8a8a;
+    margin-bottom: 20px;
+    font-family: 'Rubik Distressed', cursive;
   }
 
-  .linkSolo {
-    text-decoration: none;
-    color: grey;
-  }
-  
-  .linkSolo:hover {
-    color: rgb(238, 209, 19);
-  }
+}
