@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap");
 
 /* Fuente general: Roboto*/
 * {
@@ -9,11 +8,11 @@
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .error {
   max-width: fit-content;
   margin: 0 auto;
@@ -25,7 +24,7 @@ h1 {
   font-size: 180px;
   color: #8a8a8a;
   margin-bottom: 20px;
-  font-family: 'Rubik Distressed', cursive;
+  font-family: "Rubik Distressed", cursive;
 }
 
 h2 {
@@ -55,20 +54,11 @@ p a:hover {
   background-color: #222;
 }
 
-
 @media (max-width: 640px) {
   h1 {
     font-size: 100px;
     color: #8a8a8a;
     margin-bottom: 20px;
-    font-family: 'Rubik Distressed', cursive;
+    font-family: "Rubik Distressed", cursive;
   }
-
-  .linkSolo {
-    text-decoration: none;
-    color: grey;
-  }
-  
-  .linkSolo:hover {
-    color: rgb(238, 209, 19);
-  }
+}
