@@ -1,8 +1,29 @@
 import Juego from "./classVideojuego.js";
 import { sumarioValidacion } from "./helpers.js";
 
+//variables globales
+let listaVideoJuegos =
+  JSON.parse(localStorage.getItem("listaVideoJuegos")) || [];
+if (listaVideoJuegos.length !== 0) {
+  listaVideoJuegos = listaVideoJuegos.map(
+    (videoJuego) =>
+      new Juego(
+        videoJuego.nombre,
+        videoJuego.precio,
+        videoJuego.categoria,
+        videoJuego.descripcion,
+        videoJuego.imagen,
+        videoJuego.imagenMayorTamanio,
+        videoJuego.requisitos,
+        videoJuego.desarrollador,
+        videoJuego.plataforma
+      )
+  );
+}
+
+console.log(listaVideoJuegos);
+
 let formularioAdminVideoJuego = document.getElementById("formVideoJuego");
-let listaVideoJuegos = [];
 
 let codigo = document.getElementById("codigo"),
   nombre = document.getElementById("nombre"),
@@ -15,49 +36,54 @@ let codigo = document.getElementById("codigo"),
   desarrollador = document.getElementById("desarrollador"),
   plataforma = document.getElementById("plataforma");
 
-// function validarGenero(genero) {
-//     console.log(genero);
-//     if (
-//       genero === 'accion' ||
-//       genero === 'drama' ||
-//       genero === 'comedia' ||
-//       genero === 'aventura'
-//     ) {
-//       console.log('El género es un valor de la lista desplegable');
-//       return true;
-//     } else {
-//       console.log('El género no es un valor de la lista desplegable');
-//       return false;
-//     }
-//   }
+//modal funcion cerrar formulario
+let modalFormVideojuego = new bootstrap.Modal(
+  document.getElementById("modalVideoJuego")
+);
+console.log(modalFormVideojuego);
+let btnCrearVideoJuego = document.getElementById("btnCrearVideoJuego");
 
 //Manejador de Eventos
 formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
-
-// Ejemplo de uso de la clase Juego
-const juego = new Juego(
-  "Nombre del juego",
-  500,
-  "Simulación",
-  "Descripción del juego",
-  "ruta-imagen.png",
-  "ruta-imagen-grande.png",
-  "Requisitos del juego",
-  "Desarrollador del juego",
-  "Plataforma del juego"
-);
-
-console.log(juego.nombre); // "Nombre del juego"
-console.log(juego.precio); // "Precio del juego"
-console.log(juego.categoria); // "Categoría del juego"
-console.log(juego.descripcion); // "Descripción del juego"
-console.log(juego.imagen); // "ruta-imagen.png"
-console.log(juego.imagenMayorTamanio); // "ruta-imagen-grande.png"
-console.log(juego.requisitos); // "Requisitos del juego"
-console.log(juego.desarrollador); // "Nintendo"
-console.log(juego.plataforma); // "Plataforma del juego"
+btnCrearVideoJuego.addEventListener("click", mostrarModalVideoJuego);
 
 //parametros de la funcion
+
+cargaInicial();
+
+function cargaInicial() {
+  if (listaVideoJuegos.length > 0) {
+    //se dibuja la fila
+    listaVideoJuegos.map((videoJuego, longitud) =>
+      crearFila(videoJuego, longitud + 1)
+    );
+  }
+}
+
+function crearFila(videoJuego, longitud) {
+  let tbody = document.querySelector("#tablaVideoJuego");
+  tbody.innerHTML += `<tr>
+  <td scope="col">${longitud}</td>
+  <td> ${videoJuego.nombre}</td>
+  <td> ${videoJuego.precio}</td>
+  <td> ${videoJuego.categoria}</td>
+  <td class="celdaTamanio text-truncate"> 
+    ${videoJuego.descripcion}
+  </td>
+  <td class="celdaTamanio text-truncate">
+    ${videoJuego.imagen}
+  </td>
+  <td>
+    <button class="btn btn-warning">
+      <i class="bi bi-pencil-square"></i>
+    </button>
+    <button class="btn btn-danger">
+      <i class="bi bi-x-square"></i>
+    </button>
+  </td>
+</tr>`;
+}
+
 function prepararFormulario(e) {
   e.preventDefault();
   console.log("se esta ejecutando la creacion del videoJuego");
@@ -66,7 +92,17 @@ function prepararFormulario(e) {
 
 function crearVideoJuego() {
   //validacion del formulario
-  let resumen = sumarioValidacion("nombre.value");
+  let resumen = sumarioValidacion(
+    nombre.value,
+    precio.value,
+    categoria.value,
+    descripcion.value,
+    imagen.value,
+    imagenMayorTamanio.value,
+    requisitos.value,
+    desarrollador.value,
+    plataforma.value
+  );
   if (resumen.length === 0) {
     //los datos son validos
     // se crea el objeto Vj
@@ -89,7 +125,13 @@ function crearVideoJuego() {
     //lo almaceno en el localstorage
     localStorage.setItem("listaVideoJuegos", JSON.stringify(listaVideoJuegos));
 
+    //dibujar la fila nueva en la tabla
+    crearFila(juegoNuevo, listaVideoJuegos.length);
     //luego cierro el modal
+
+    modalFormVideojuego.hide();
+    //limpiar el formulario
+    limpiarFormulario();
   } else {
     //mostrar cartel de error
     let alerta = document.getElementById("alerta");
@@ -97,3 +139,11 @@ function crearVideoJuego() {
     alerta.className = "alert alert-danger mt-3";
   }
 }
+function limpiarFormulario() {
+  formularioAdminVideoJuego.reset();
+}
+function mostrarModalVideoJuego() {
+  modalFormVideojuego.show();
+}
+
+console.log();

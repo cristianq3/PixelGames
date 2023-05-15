@@ -254,8 +254,6 @@
         <button
           class="btn btn-outline-primary btn-sm ms-3"
           id="btnCrearVideoJuego"
-          data-bs-target="#modalVideoJuego"
-          data-bs-toggle="modal"
         >
           <i class="bi bi-clipboard2-plus-fill"></i>
         </button>
@@ -269,65 +267,14 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Imagen</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Plataforma</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaVideoJuego">
-              <tr>
-                <td scope="col">1</td>
-                <td>STAR WARS Jedi Survivor</td>
-                <td class="celdaTamanio text-truncate">
-                  Cal ya no es un padawan, sino que ha madurado y se ha
-                  convertido en un poderoso caballero Jedi. Los recuerdos y las
-                  expectativas de la Orden Jedi cada vez pesan más sobre él y su
-                  cruzada contra el Imperio se vuelve más peligrosa cada segundo
-                  que pasa. Es hora de que Cal decida hasta dónde está dispuesto
-                  a llegar para salvar a sus seres queridos.
-                </td>
-                <td class="celdaTamanio text-truncate">
-                  https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
-                </td>
-                <td>Aventura</td>
-                <td>Plataforma</td>
-                <td>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="celdaTamanio" scope="col">1</td>
-                <td>STAR WARS Jedi Survivor</td>
-                <td class="celdaTamanio text-truncate">
-                  Cal ya no es un padawan, sino que ha madurado y se ha
-                  convertido en un poderoso caballero Jedi. Los recuerdos y las
-                  expectativas de la Orden Jedi cada vez pesan más sobre él y su
-                  cruzada contra el Imperio se vuelve más peligrosa cada segundo
-                  que pasa. Es hora de que Cal decida hasta dónde está dispuesto
-                  a llegar para salvar a sus seres queridos.
-                </td>
-                <td class="celdaTamanio text-truncate">
-                  https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
-                </td>
-                <td>Aventura</td>
-                <td>Plataforma</td>
-                <td>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="tablaVideoJuego"></tbody>
           </table>
         </article>
       </section>
@@ -421,7 +368,7 @@
                   rows="4"
                   class="form-control"
                   placeholder="Ej: Cal ya no es un padawan,sino que ha madurado y se ha convertido en un poderoso caballero Jedi. Los recuerdos y las expectativas de la Orden Jedi cada vez pesan más sobre él y su cruzada contra el Imperio se vuelve más peligrosa cada segundo que pasa. Es hora de que Cal decida hasta dónde está dispuesto a llegar para salvar a sus seres queridos."
-                  maxlength="200"
+                  maxlength="500"
                   minlength="2"
                   required
                 ></textarea>
@@ -469,7 +416,7 @@
                   id="requisitos"
                   rows="4"
                   class="form-control"
-                  placeholder="Ej: Procesador 1 Ghz, espacio en disco 5 Gb, Tarjeta gráfica 128 Mb Jedi. Los recuerdos y las expectativas de la Orden Jedi cada vez pesan más sobre él y su cruzada contra el Imperio se vuelve más peligrosa cada segundo que pasa. Es hora de que Cal decida hasta dónde está dispuesto a llegar para salvar a sus seres queridos."
+                  placeholder="Ej: Procesador 1 Ghz, espacio en disco 5 Gb, Tarjeta gráfica 128 Mb."
                   maxlength="500"
                   minlength="2"
                   required
@@ -494,8 +441,8 @@
                   <option value="">Selecione una opcion</option>
                   <option value="pc">PC</option>
                   <option value="playstation5">PlayStation 5</option>
-                  <option value="vboxSeriesX">Xbox Series X</option>
-                  <option value="nintendoSwitch">Nintendo Switch</option>
+                  <option value="xboxseriesx">Xbox Series X</option>
+                  <option value="nintendoswitch">Nintendo Switch</option>
                   <option value="moviles">Móviles</option>
                 </select>
               </div>
