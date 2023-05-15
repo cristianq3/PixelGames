@@ -7,12 +7,6 @@
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .error {
   max-width: fit-content;
   margin: 0 auto;
@@ -25,12 +19,6 @@ h1 {
   color: #8a8a8a;
   margin-bottom: 20px;
   font-family: "Rubik Distressed", cursive;
-}
-
-h2 {
-  font-size: 36px;
-  color: #333;
-  margin-bottom: 20px;
 }
 
 p {
@@ -61,4 +49,3 @@ p a:hover {
     margin-bottom: 20px;
     font-family: "Rubik Distressed", cursive;
   }
-}
