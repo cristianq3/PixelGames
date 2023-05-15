@@ -3,30 +3,23 @@ const UsuarioAdmin = {
   usuario: "admin@pixelgames.com",
   contrasenia: "Admin123",
 };
-//boton administrador para poner D-none
-const btnAdministrador = document.getElementById("btnAdministradorNavbar");
-//Form de Login
 
-let btnIngresar = document.getElementById("btnIngresar");
+
+//Boton Logeo Traer el Form
+let formIngresar = document.getElementById("ingresar");
 
 //Eventos
-btnIngresar.addEventListener("submit", function (e) {
+btnIngresar.addEventListener("submit", prepararFormulario);
+
+function prepararFormulario(e) {
   e.preventDefault();
-  logearUsuario();
-});
-
-function logearUsuario() {
-  //Traer los Valores de user y contraseña.
-  let usuarioIngresado = document.getElementById("usuario").value;
-  let contraseniaIngresada = document.getElementById("contrasenia").value;
-  //Validar si son datos correctos.
-  //Comparar si son los mismos del admin
-  //
-
-  //mostrar mensaje de logueado con exito. y
-  //mostrar btnAdministrador () sacar class d-none)
-  //cambiar el InnerHtml del boton con id btnIngresoModal cambiar a Salir
-  //cerrar Modal
+  Ingresar();
+ 
 }
 
-console.log(UsuarioAdmin.usuario, UsuarioAdmin.contrasenia);
+function Ingresar() {
+  let usuarioIngresado = document.getElementById("usuario").value;
+  let contraseniaIngresada = document.getElementById("contrasenia").value;
+
+  console.log(usuarioIngresado, contraseniaIngresada);
+}
