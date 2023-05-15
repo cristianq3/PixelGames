@@ -67,7 +67,7 @@ function crearFila(videoJuego, longitud) {
   <td> ${videoJuego.nombre}</td>
   <td> ${videoJuego.precio}</td>
   <td> ${videoJuego.categoria}</td>
-  <td class="text-truncate"> 
+  <td class="celdaTamanio text-truncate"> 
     ${videoJuego.descripcion}
   </td>
   <td class="celdaTamanio text-truncate">
