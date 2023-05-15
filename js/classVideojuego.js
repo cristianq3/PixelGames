@@ -11,6 +11,7 @@ export default class Juego {
   #plataforma;
 
   constructor(
+    codigo,
     nombre,
     precio,
     categoria,
@@ -21,7 +22,7 @@ export default class Juego {
     desarrollador,
     plataforma
   ) {
-    this.#codigo = uuidv4();
+    this.#codigo = codigo;
     this.#nombre = nombre;
     this.#precio = precio;
     this.#categoria = categoria;

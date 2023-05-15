@@ -108,7 +108,7 @@ function crearVideoJuego() {
     //los datos son validos
     // se crea el objeto Vj
     const juegoNuevo = new Juego(
-      undefined,
+      uuidv4(),
       nombre.value,
       precio.value,
       categoria.value,
