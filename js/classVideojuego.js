@@ -13,6 +13,7 @@ export default class Juego {
   constructor(
     nombre,
     precio,
+    categoria,
     descripcion,
     imagen,
     imagenMayorTamanio,
@@ -115,6 +116,7 @@ export default class Juego {
       imagenMayorTamanio: this.imagenMayorTamanio,
       requisitos: this.requisitos,
       desarrollador: this.desarrollador,
+      plataforma: this.plataforma,
     };
   }
 }
