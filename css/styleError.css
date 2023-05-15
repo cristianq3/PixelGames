@@ -17,14 +17,12 @@ body {
 .error {
   max-width: fit-content;
   margin: 0 auto;
-  padding: 80px 40px;
+  padding: 40px 40px;
   text-align: center;
-
-  color: #fff;
 }
 
 h1 {
-  font-size: 280px;
+  font-size: 180px;
   color: #8a8a8a;
   margin-bottom: 20px;
   font-family: 'Rubik Distressed', cursive;
@@ -32,7 +30,7 @@ h1 {
 
 h2 {
   font-size: 36px;
-
+  color: #333;
   margin-bottom: 20px;
 }
 
@@ -66,4 +64,11 @@ p a:hover {
     font-family: 'Rubik Distressed', cursive;
   }
 
-}
+  .linkSolo {
+    text-decoration: none;
+    color: grey;
+  }
+  
+  .linkSolo:hover {
+    color: rgb(238, 209, 19);
+  }
