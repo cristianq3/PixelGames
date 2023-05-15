@@ -54,7 +54,9 @@ cargaInicial();
 function cargaInicial() {
   if (listaVideoJuegos.length > 0) {
     //se dibuja la fila
-    listaVideoJuegos.map((videoJuego) => crearFila(videoJuego));
+    listaVideoJuegos.map((videoJuego, longitud) =>
+      crearFila(videoJuego, longitud + 1)
+    );
   }
 }
 
@@ -65,7 +67,7 @@ function crearFila(videoJuego, longitud) {
   <td> ${videoJuego.nombre}</td>
   <td> ${videoJuego.precio}</td>
   <td> ${videoJuego.categoria}</td>
-  <td class="text-truncate"> 
+  <td class="celdaTamanio text-truncate"> 
     ${videoJuego.descripcion}
   </td>
   <td class="celdaTamanio text-truncate">
@@ -143,3 +145,5 @@ function limpiarFormulario() {
 function mostrarModalVideoJuego() {
   modalFormVideojuego.show();
 }
+
+console.log();
