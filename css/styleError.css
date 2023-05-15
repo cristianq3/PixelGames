@@ -29,21 +29,16 @@ main {
 }
 
 .error {
-  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
-  padding: 80px 40px;
+  padding: 40px 40px;
   text-align: center;
+  object-fit: cover;
 }
 
 h1 {
-  font-size: 180px;
+  font-size: 90px;
   color: #8a8a8a;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 36px;
-  color: #333;
   margin-bottom: 20px;
 }
 
@@ -79,4 +74,44 @@ footer {
   
   .linkSolo:hover {
     color: rgb(238, 209, 19);
+  }
+  .icons:hover {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  .secFoot{
+    overflow-x: hidden;
+  }
+  
+  @-webkit-keyframes pulse {
+    0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    50% {
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
+    }
+    100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+  }
+  @keyframes pulse {
+    0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    50% {
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
+    }
+    100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
   }
