@@ -78,8 +78,9 @@ function crearFila(videoJuego, longitud) {
     <button class="btn btn-warning">
       <i class="bi bi-pencil-square"></i>
     </button>
-    <button class="btn btn-danger" onclick="borrarPelicula()">
+    <button class="btn btn-danger" onclick="borrarPelicula('${videoJuego.codigo}')">
       <i class="bi bi-x-square"></i>
+
     </button>
   </td>
 </tr>`;
@@ -105,10 +106,8 @@ function crearVideoJuego() {
     plataforma.value
   );
   if (resumen.length === 0) {
-    //los datos son validos
-    // se crea el objeto Vj
-    const juegoNuevo = new Juego(
-      codigo,
+     const juegoNuevo = new Juego(
+      undefined,
       nombre.value,
       precio.value,
       categoria.value,
@@ -146,8 +145,6 @@ function guardarEnLocalstorage() {
   localStorage.setItem("listaVideoJuegos", JSON.stringify(listaVideoJuegos));
 }
 
-
-
 function limpiarFormulario() {
   formularioAdminVideoJuego.reset();
 }
@@ -155,7 +152,9 @@ function mostrarModalVideoJuego() {
   modalFormVideojuego.show();
 }
 
-window.borrarPelicula = (codigo) => {
+window.borrarPelicula = (codigo) => { 
+
+
   Swal.fire({
     title: "¿Esta seguro de eliminar la pelicula?",
     text: "No se puede revertir este proceso",
@@ -168,11 +167,13 @@ window.borrarPelicula = (codigo) => {
   }).then((result) => {
     console.log(result);
     if (result.isConfirmed) {
-      //agrega mi codigo de borrar
-      //borrar la pelicula del array
+      //borrar el Juego del array
       let posicionJuego = listaVideoJuegos.findIndex(
         (Juego) => Juego.codigo === codigo
       );
+
+      console.log(posicionJuego)
+
       listaVideoJuegos.splice(posicionJuego, 1);
       //actualizar el localstorage
       guardarEnLocalstorage();
