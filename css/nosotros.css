@@ -26,3 +26,6 @@
   padding: 7p 0px;
   object-fit: cover;
 }
+
+.controlUserPass:invalid { border-color: red; } 
+.controlUserPass:valid { border-color: green; }

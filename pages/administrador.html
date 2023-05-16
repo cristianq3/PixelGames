@@ -161,16 +161,17 @@
                   </div>
                   <div class="modal-body">
                     <!-- FORMULARIO DE LOGIN -->
-                    <form>
+                    <form role="log" id="accessLogin">
                       <h6 class="h6">Ingresa con tu e-mail y contraseña:</h6>
                       <div class="form-floating mb-3">
                         <input
                           type="email"
                           maxlength="254 "
                           minlength="4"
-                          class="form-control"
+                          class="form-control controlUserPass"
                           id="floatingInput"
                           placeholder="nombre@mail.com"
+                          pattern="[a-zA-Z0-9._%+-]+@pixelgames\.com"
                           required
                         />
                         <label for="floatingInput">Usuario</label>
@@ -179,7 +180,7 @@
                         <input
                           required
                           type="password"
-                          class="form-control"
+                          class="form-control controlUserPass"
                           id="floatingPassword"
                           placeholder="Password"
                           maxlength="128"

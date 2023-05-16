@@ -77,3 +77,11 @@ comprobarLocalstorage(userLogeado);
 // boton ingresar con display block cdo este en true la variable.
 
 // boton salir con display none cuando la variable este en true.
+
+
+
+
+
+
+
+

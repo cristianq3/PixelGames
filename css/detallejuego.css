@@ -34,6 +34,9 @@ header {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
 
+.controlUserPass:invalid { border-color: red; } 
+.controlUserPass:valid { border-color: green; }
+
 
 /* Media Querys */
 @media (max-width: 640px) {
