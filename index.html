@@ -112,23 +112,23 @@
             </ul>
             <!-- FORMULARIO DE BUSQUEDA -->
             <form
-              class="d-flex ms-0 ms-md-4"
-              role="search"
-              id="formularioBuscarNavbar"
+            class="d-flex ms-0 ms-md-4"
+            role="search"
+            id="formularioBuscarNavbar"
             >
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar Juego"
-                aria-label="Search"
-                maxlength="150"
-                minlength="3"
-              />
-              <button class="btn btn-outline-secondary border-0" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
-            </form>
-
+            <input 
+            id="buscador"
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar Juego"
+              aria-label="Search"
+              maxlength="150"
+              minlength="3"
+            />
+            <button class="btn btn-outline-secondary border-0" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
             <!-- MODAL DE LOGIN + BOTON -->
             <!-- Button trigger modal -->
             <button
@@ -297,14 +297,14 @@
       <!--Sector juegos-->
       <section>
         <div>
-          <h3 class="m-3 text-center fs-2 fw-bold mt-4g">¡Disfruta nuestros juegos!</h3>
+          <h3 id="textoTitulo" class="m-3 text-center fs-2 fw-bold mt-4g">¡Disfruta nuestros juegos!</h3>
         </div>
-        <div id="sectorJuegos" class="container-fluid mt-2">
-          <div class="row justify-content-around ">
+        <div id="sectorJuegos" class="container-fluid mt-2 row justify-content-center align-items-center" >
+          <div class="row justify-content-center align-items-center ">
             <article class="card col-sm-12 col-md-6 col-lg-4">
                 <img src="https://media.contentapi.ea.com/content/dam/gin/images/2021/04/ea-sports-pgatour-keyart.jpg.adapt.crop1x1.767p.jpg" class="card-img-top img-fluid mt-2" alt="...">
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">hola quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <button type="button" class="btn btn-primary">Comprar</button>
                   <button type="button" class="btn btn-link">Más información</button>
                 </div>
@@ -312,7 +312,7 @@
               <article class="card col-sm-12 col-md-6 col-lg-4 mx-2">
                 <img src="https://media.contentapi.ea.com/content/dam/gin/images/2021/04/ea-sports-pgatour-keyart.jpg.adapt.crop1x1.767p.jpg" class="card-img-top img-fluid mt-2" alt="...">
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">hola quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <button type="button" class="btn btn-primary">Comprar</button>
                   <button type="button" class="btn btn-link">Más información</button>
                 </div>
@@ -320,7 +320,7 @@
               <article class="card col-sm-12 col-md-6 col-lg-4">
                 <img src="https://media.contentapi.ea.com/content/dam/gin/images/2021/04/ea-sports-pgatour-keyart.jpg.adapt.crop1x1.767p.jpg" class="card-img-top img-fluid mt-2" alt="...">
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">bueno quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <button type="button" class="btn btn-primary">Comprar</button>
                   <button type="button" class="btn btn-link">Más información</button>
                 </div>
@@ -328,7 +328,7 @@
               <article class="card col-sm-12 col-md-6 col-lg-4">
                 <img src="https://media.contentapi.ea.com/content/dam/gin/images/2021/04/ea-sports-pgatour-keyart.jpg.adapt.crop1x1.767p.jpg" class="card-img-top img-fluid mt-2" alt="...">
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">adios quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <button type="button" class="btn btn-primary">Comprar</button>
                   <button type="button" class="btn btn-link">Más información</button>
                 </div>
@@ -475,5 +475,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/app.js"></script>
+    <script src="/js//buscador.js"></script>
   </body>
 </html>
