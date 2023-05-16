@@ -7,7 +7,7 @@ let listaVideoJuegos =
 if (listaVideoJuegos.length !== 0) {
   listaVideoJuegos = listaVideoJuegos.map(
     (videoJuego) =>
-      new videoJuego(
+      new Juego(
         videoJuego.nombre,
         videoJuego.precio,
         videoJuego.categoria,
@@ -47,29 +47,6 @@ let btnCrearVideoJuego = document.getElementById("btnCrearVideoJuego");
 formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
 btnCrearVideoJuego.addEventListener("click", mostrarModalVideoJuego);
 
-// Ejemplo de uso de la clase Juego
-const juego = new Juego(
-  "Nombre del juego",
-  500,
-  "Simulación",
-  "Descripción del juego",
-  "ruta-imagen.png",
-  "ruta-imagen-grande.png",
-  "Requisitos del juego",
-  "Desarrollador del juego",
-  "Plataforma del juego"
-);
-
-// console.log(juego.nombre); // "Nombre del juego"
-// console.log(juego.precio); // "Precio del juego"
-// console.log(juego.categoria); // "Categoría del juego"
-// console.log(juego.descripcion); // "Descripción del juego"
-// console.log(juego.imagen); // "ruta-imagen.png"
-// console.log(juego.imagenMayorTamanio); // "ruta-imagen-grande.png"
-// console.log(juego.requisitos); // "Requisitos del juego"
-// console.log(juego.desarrollador); // "Nintendo"
-// console.log(juego.plataforma); // "Plataforma del juego"
-
 //parametros de la funcion
 
 cargaInicial();
@@ -77,23 +54,25 @@ cargaInicial();
 function cargaInicial() {
   if (listaVideoJuegos.length > 0) {
     //se dibuja la fila
-    listaVideoJuegos.map((videoJuego) => crearFila(videoJuego));
+    listaVideoJuegos.map((videoJuego, longitud) =>
+      crearFila(videoJuego, longitud + 1)
+    );
   }
 }
 
-function crearFila(videoJuego) {
+function crearFila(videoJuego, longitud) {
   let tbody = document.querySelector("#tablaVideoJuego");
   tbody.innerHTML += `<tr>
-  <td scope="col">1</td>
+  <td scope="col">${longitud}</td>
   <td> ${videoJuego.nombre}</td>
-  <td class="celdaTamanio text-truncate">
+  <td> ${videoJuego.precio}</td>
+  <td> ${videoJuego.categoria}</td>
+  <td class="celdaTamanio text-truncate"> 
     ${videoJuego.descripcion}
   </td>
   <td class="celdaTamanio text-truncate">
     ${videoJuego.imagen}
   </td>
-  <td>${videoJuego.categoria}</td>
-  <td>${videoJuego.plataforma}</td>
   <td>
     <button class="btn btn-warning">
       <i class="bi bi-pencil-square"></i>
@@ -146,10 +125,13 @@ function crearVideoJuego() {
     //lo almaceno en el localstorage
     localStorage.setItem("listaVideoJuegos", JSON.stringify(listaVideoJuegos));
 
+    //dibujar la fila nueva en la tabla
+    crearFila(juegoNuevo, listaVideoJuegos.length);
     //luego cierro el modal
 
-    limpiarFormulario();
     modalFormVideojuego.hide();
+    //limpiar el formulario
+    limpiarFormulario();
   } else {
     //mostrar cartel de error
     let alerta = document.getElementById("alerta");
@@ -158,9 +140,10 @@ function crearVideoJuego() {
   }
 }
 function limpiarFormulario() {
-  formularioAdminVideoJuego.requestFullscreen();
+  formularioAdminVideoJuego.reset();
 }
-
 function mostrarModalVideoJuego() {
   modalFormVideojuego.show();
 }
+
+console.log();

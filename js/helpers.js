@@ -31,7 +31,7 @@ function validarCategoria(categoria) {
     categoria === "estrategia" ||
     categoria === "familiar" ||
     categoria === "fantasia" ||
-    categoria === "MMORPG" ||
+    categoria === "mmorpg" ||
     categoria === "simulacion" ||
     categoria === "terror"
   ) {
@@ -102,10 +102,10 @@ function validarDesarrollador(desarrollador, min, max) {
 function validarPlataforma(plataforma) {
   console.log(plataforma);
   if (
-    plataforma === "PC" ||
+    plataforma === "pc" ||
     plataforma === "playstation5" ||
-    plataforma === "vboxSeriesX" ||
-    plataforma === "nintendoSwitch" ||
+    plataforma === "xboxseriesx" ||
+    plataforma === "nintendoswitch" ||
     plataforma === "moviles"
   ) {
     console.log("La plataforma es un valor de la lista desplegable");
@@ -138,7 +138,8 @@ export function sumarioValidacion(
   }
 
   if (!validarCategoria(categoria, 2, 60)) {
-    resumen += "Debe seleccionar una de las categorías sugeridas en campo Categoría. <br>";
+    resumen +=
+      "Debe seleccionar una de las categorías sugeridas en campo Categoría. <br>";
   }
 
   if (!validarDescripcion(descripcion, 2, 500)) {
@@ -147,12 +148,12 @@ export function sumarioValidacion(
 
   if (!validarURLImagen(imagen)) {
     resumen +=
-      "La imagen de la pelicula debe ser una URL valida terminada en (.jpg, .png, .gif). <br>";
+      "La imagen del videojuego debe ser una URL valida terminada en (.jpg, .png, .gif). <br>";
   }
 
   if (!validarURLImagenMayorTamanio(imagenMayorTamanio)) {
     resumen +=
-      "La imagen de mayor tamaño de la pelicula debe ser una URL valida terminada en (.jpg, .png, .gif). <br>";
+      "La imagen de mayor tamaño del videojuego debe ser una URL valida terminada en (.jpg, .png, .gif). <br>";
   }
 
   if (!validarRequisitos(requisitos, 2, 500)) {
@@ -165,8 +166,7 @@ export function sumarioValidacion(
   }
 
   if (!validarPlataforma(plataforma, 2, 60)) {
-    resumen +=
-    "Debe seleccionar una de las categorías sugeridas en el campo Plataforma. <br>";
+    resumen += "Debe seleccionar una de las plataformas sugeridas. <br>";
   }
 
   return resumen;

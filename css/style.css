@@ -30,6 +30,9 @@ footer {
   color: rgb(238, 209, 19);
 }
 
+.controlUserPass:invalid { border-color: red; } 
+.controlUserPass:valid { border-color: green; }
+
 
 /*cssadministrador*/
 .celdaTamanio {
