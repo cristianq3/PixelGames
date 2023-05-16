@@ -78,7 +78,7 @@ function crearFila(videoJuego, longitud) {
     <button class="btn btn-warning">
       <i class="bi bi-pencil-square"></i>
     </button>
-    <button class="btn btn-danger">
+    <button class="btn btn-danger" onclick="borrarPelicula()">
       <i class="bi bi-x-square"></i>
     </button>
   </td>
@@ -141,6 +141,13 @@ function crearVideoJuego() {
     alerta.className = "alert alert-danger mt-3";
   }
 }
+
+function guardarEnLocalstorage() {
+  localStorage.setItem("listaVideoJuegos", JSON.stringify(listaVideoJuegos));
+}
+
+
+
 function limpiarFormulario() {
   formularioAdminVideoJuego.reset();
 }
@@ -148,4 +155,33 @@ function mostrarModalVideoJuego() {
   modalFormVideojuego.show();
 }
 
-console.log();
+window.borrarPelicula = (codigo) => {
+  Swal.fire({
+    title: "¿Esta seguro de eliminar la pelicula?",
+    text: "No se puede revertir este proceso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    console.log(result);
+    if (result.isConfirmed) {
+      //agrega mi codigo de borrar
+      //borrar la pelicula del array
+      let posicionJuego = listaVideoJuegos.findIndex(
+        (Juego) => Juego.codigo === codigo
+      );
+      listaVideoJuegos.splice(posicionJuego, 1);
+      //actualizar el localstorage
+      guardarEnLocalstorage();
+      //borrar la fila de la tabla
+      let tbody = document.querySelector("#tablaVideoJuego");
+      tbody.removeChild(tbody.children[posicionJuego]);
+      //todo: actualizar el numero de  las filas de la tabla
+      Swal.fire("Juego eliminado", "El Juego seleccionada fue eliminada correctamente", "success");
+    }
+  });
+};  
+
