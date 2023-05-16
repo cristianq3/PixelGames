@@ -22,8 +22,6 @@ if (listaVideoJuegos.length !== 0) {
   );
 }
 
-console.log(listaVideoJuegos);
-
 let formularioAdminVideoJuego = document.getElementById("formVideoJuego");
 
 let codigo = document.getElementById("codigo"),
@@ -41,8 +39,10 @@ let codigo = document.getElementById("codigo"),
 let modalFormVideojuego = new bootstrap.Modal(
   document.getElementById("modalVideoJuego")
 );
-console.log(modalFormVideojuego);
+
 let btnCrearVideoJuego = document.getElementById("btnCrearVideoJuego");
+
+let crearJuegoNuevo = true; //
 
 //Manejador de Eventos
 formularioAdminVideoJuego.addEventListener("submit", prepararFormulario);
@@ -88,8 +88,12 @@ function crearFila(videoJuego, longitud) {
 
 function prepararFormulario(e) {
   e.preventDefault();
-  console.log("se esta ejecutando la creacion del videoJuego");
-  crearVideoJuego();
+
+  if (crearJuegoNuevo) {
+    crearVideoJuego();
+  } else {
+    editarPelicula();
+  }
 }
 
 function crearVideoJuego() {
@@ -118,11 +122,10 @@ function crearVideoJuego() {
       desarrollador.value,
       plataforma.value
     );
-    console.log(juegoNuevo);
 
     //agregamos el videojuego en un array
     listaVideoJuegos.push(juegoNuevo);
-    console.log(listaVideoJuegos);
+
     //lo almaceno en el localstorage
     localStorage.setItem("listaVideoJuegos", JSON.stringify(listaVideoJuegos));
 
@@ -149,12 +152,14 @@ function limpiarFormulario() {
   formularioAdminVideoJuego.reset();
 }
 function mostrarModalVideoJuego() {
+  crearJuegoNuevo = true;
+  limpiarFormulario();
   modalFormVideojuego.show();
 }
 
 window.borrarJuego = (codigo) => {
   Swal.fire({
-    title: "¿Esta seguro de eliminar la pelicula?",
+    title: "¿Esta seguro de eliminar el Juego?",
     text: "No se puede revertir este proceso",
     icon: "warning",
     showCancelButton: true,
@@ -163,14 +168,11 @@ window.borrarJuego = (codigo) => {
     confirmButtonText: "Borrar",
     cancelButtonText: "Cancelar",
   }).then((result) => {
-    console.log(result);
     if (result.isConfirmed) {
       //borrar el Juego del array
       let posicionJuego = listaVideoJuegos.findIndex(
         (Juego) => Juego.codigo === codigo
       );
-
-      console.log(posicionJuego);
 
       listaVideoJuegos.splice(posicionJuego, 1);
       //actualizar el localstorage
@@ -194,21 +196,77 @@ window.prepararJuego = (codigoJuegoeditar) => {
     (juego) => juego.codigo === codigoJuegoeditar
   );
 
-  console.log(juegoBuscado);
   //2- mostrar el formulario con los datos
 
   modalFormVideojuego.show();
-    codigo.value = juegoBuscado.codigo;
-    nombre.value = juegoBuscado.nombre;
-    precio.value = juegoBuscado.precio;
-    categoria.value = juegoBuscado.categoria;
-    descripcion.value = juegoBuscado.descripcion;
-    imagen.value = juegoBuscado.imagen;
-    imagenMayorTamanio.value = juegoBuscado.imagenMayorTamanio;
-    requisitos.value = juegoBuscado.requisitos;
-    desarrollador.value = juegoBuscado.desarrollador;
-    plataforma.value = juegoBuscado.plataforma;
+  codigo.value = juegoBuscado.codigo;
+  nombre.value = juegoBuscado.nombre;
+  precio.value = juegoBuscado.precio;
+  categoria.value = juegoBuscado.categoria;
+  descripcion.value = juegoBuscado.descripcion;
+  imagen.value = juegoBuscado.imagen;
+  imagenMayorTamanio.value = juegoBuscado.imagenMayorTamanio;
+  requisitos.value = juegoBuscado.requisitos;
+  desarrollador.value = juegoBuscado.desarrollador;
+  plataforma.value = juegoBuscado.plataforma;
 
-    //3- cambiar el estado de la variable crearPeliculaNueva a false
-    crearPeliculaNueva = false;
+  //3- cambiar el estado de la variable crearPeliculaNueva a false
+  crearJuegoNuevo = false;
 };
+
+function editarPelicula() {
+  //Buscar la posicion donde esta el juego que quiero esitar;
+  let posicionJuego = listaVideoJuegos.findIndex(
+    (juego) => juego.codigo === codigo.value
+  );
+
+  // Validar y si esta ok   //Editar os datos seleccionados
+
+  let resumen = sumarioValidacion(
+    nombre.value,
+    precio.value,
+    categoria.value,
+    descripcion.value,
+    imagen.value,
+    imagenMayorTamanio.value,
+    requisitos.value,
+    desarrollador.value,
+    plataforma.value
+  );
+  if (resumen.length === 0) {
+    listaVideoJuegos[posicionJuego].nombre = nombre.value;
+    listaVideoJuegos[posicionJuego].precio = precio.value;
+    listaVideoJuegos[posicionJuego].categoria = categoria.value;
+    listaVideoJuegos[posicionJuego].descripcion = descripcion.value;
+    listaVideoJuegos[posicionJuego].imagen = imagen.value;
+    listaVideoJuegos[posicionJuego].imagenMayorTamanio =
+      imagenMayorTamanio.value;
+    listaVideoJuegos[posicionJuego].requisitos = requisitos.value;
+    listaVideoJuegos[posicionJuego].desarrollador = desarrollador.value;
+    listaVideoJuegos[posicionJuego].plataforma = plataforma.value;
+  }
+
+  listaVideoJuegos[posicionJuego].nombre = nombre.value;
+
+  //actualizar el local storage
+  guardarEnLocalstorage();
+
+  //actualizar la fila de la tabla que estoy modificando.
+  let tbody = document.querySelector("#tablaVideoJuego");
+  tbody.children[posicionJuego].children[1].innerHTML = nombre.value;
+  tbody.children[posicionJuego].children[2].innerHTML = precio.value;
+  tbody.children[posicionJuego].children[3].innerHTML = categoria.value;
+  tbody.children[posicionJuego].children[4].innerHTML = descripcion.value;
+  tbody.children[posicionJuego].children[5].innerHTML = imagen.value;
+  //Limpiar Formulario luego de editar y cerrar Modal.
+
+  limpiarFormulario();
+  modalFormVideojuego.hide();
+  //mostrar un swalert avisando que se editó.
+
+  Swal.fire(
+    "Juego Modificado",
+    "El Juego seleccionado fue modificado exitosamente",
+    "success"
+  );
+}
