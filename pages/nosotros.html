@@ -107,36 +107,44 @@
                   </li>
                 </ul>
               </li>
+              <li class="nav-item d-none" id="btnAdministrador">
+                <a class="nav-link" href="/pages/administrador.html"
+                  >Administrador</a
+                >
+              </li>
             </ul>
             <!-- FORMULARIO DE BUSQUEDA -->
             <form
-              class="d-flex ms-0 ms-md-4"
-              role="search"
-              id="formularioBuscarNavbar"
+            class="d-flex ms-0 ms-md-4"
+            role="search"
+            id="formularioBuscarNavbar"
             >
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar Juego"
-                aria-label="Search"
-                maxlength="150"
-                minlength="3"
-              />
-              <button class="btn btn-outline-secondary border-0" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
-            </form>
-
+            <input 
+            id="buscador"
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar Juego"
+              aria-label="Search"
+              maxlength="150"
+              minlength="3"
+            />
+            <button class="btn btn-outline-secondary border-0" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
             <!-- MODAL DE LOGIN + BOTON -->
             <!-- Button trigger modal -->
+
+            <button id="btnSalirDelNav" type="button" class="btn">Salir</button>
+
             <button
+              id="btnIngresoDelNav"
               type="button"
-              class="btn fs-4 d-flex"
+              class="btn"
               data-bs-toggle="modal"
               data-bs-target="#modalLogin"
             >
-              <i class="bi bi-person-circle me-3 me-lg-0"> </i>
-              <p class="d-block d-lg-none">Ingresá</p>
+              Ingresá
             </button>
 
             <!-- Modal -->
@@ -247,7 +255,6 @@
           </div>
         </div>
       </nav>
-      
     </header>
     <main class="nosotros">
       <section class="conteiner">
@@ -379,6 +386,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/app.js"></script>
+    <script src="/js/buscador.js"></script>
     <script src="/js/validacionLogin.js"></script>
   </body>
 </html>
