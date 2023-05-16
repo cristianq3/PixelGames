@@ -75,11 +75,11 @@ function crearFila(videoJuego, longitud) {
     ${videoJuego.imagen}
   </td>
   <td>
-    <button class="btn btn-warning">
-      <i class="bi bi-pencil-square"></i>
-    </button>
-    <button class="btn btn-danger" onclick="borrarPelicula('${videoJuego.codigo}')">
-      <i class="bi bi-x-square"></i>
+  <button class="btn rounded-5 btn-warning" onclick="prepararJuego('${videoJuego.codigo}')">
+  <i class="bi bi-pencil"></i>
+</button>
+    <button class="btn rounded-5 btn-danger" onclick="borrarJuego('${videoJuego.codigo}')">
+      <i class="bi bi-x-circle"></i>
 
     </button>
   </td>
@@ -106,7 +106,7 @@ function crearVideoJuego() {
     plataforma.value
   );
   if (resumen.length === 0) {
-     const juegoNuevo = new Juego(
+    const juegoNuevo = new Juego(
       undefined,
       nombre.value,
       precio.value,
@@ -118,7 +118,7 @@ function crearVideoJuego() {
       desarrollador.value,
       plataforma.value
     );
-    console.log(juegoNuevo); 
+    console.log(juegoNuevo);
 
     //agregamos el videojuego en un array
     listaVideoJuegos.push(juegoNuevo);
@@ -152,9 +152,7 @@ function mostrarModalVideoJuego() {
   modalFormVideojuego.show();
 }
 
-window.borrarPelicula = (codigo) => { 
-
-
+window.borrarJuego = (codigo) => {
   Swal.fire({
     title: "¿Esta seguro de eliminar la pelicula?",
     text: "No se puede revertir este proceso",
@@ -172,7 +170,7 @@ window.borrarPelicula = (codigo) => {
         (Juego) => Juego.codigo === codigo
       );
 
-      console.log(posicionJuego)
+      console.log(posicionJuego);
 
       listaVideoJuegos.splice(posicionJuego, 1);
       //actualizar el localstorage
@@ -181,8 +179,36 @@ window.borrarPelicula = (codigo) => {
       let tbody = document.querySelector("#tablaVideoJuego");
       tbody.removeChild(tbody.children[posicionJuego]);
       //todo: actualizar el numero de  las filas de la tabla
-      Swal.fire("Juego eliminado", "El Juego seleccionada fue eliminada correctamente", "success");
+      Swal.fire(
+        "Juego eliminado",
+        "El Juego seleccionada fue eliminada correctamente",
+        "success"
+      );
     }
   });
-};  
+};
 
+window.prepararJuego = (codigoJuegoeditar) => {
+  //1- buscar el objeto que quiero mostrar en el form
+  let juegoBuscado = listaVideoJuegos.find(
+    (juego) => juego.codigo === codigoJuegoeditar
+  );
+
+  console.log(juegoBuscado);
+  //2- mostrar el formulario con los datos
+
+  modalFormVideojuego.show();
+    codigo.value = juegoBuscado.codigo;
+    nombre.value = juegoBuscado.nombre;
+    precio.value = juegoBuscado.precio;
+    categoria.value = juegoBuscado.categoria;
+    descripcion.value = juegoBuscado.descripcion;
+    imagen.value = juegoBuscado.imagen;
+    imagenMayorTamanio.value = juegoBuscado.imagenMayorTamanio;
+    requisitos.value = juegoBuscado.requisitos;
+    desarrollador.value = juegoBuscado.desarrollador;
+    plataforma.value = juegoBuscado.plataforma;
+
+    //3- cambiar el estado de la variable crearPeliculaNueva a false
+    crearPeliculaNueva = false;
+};
