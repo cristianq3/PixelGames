@@ -18,6 +18,22 @@ main {
   min-width: fit-content;
 }
 
+/* Sector hero*/
+.texto-hero {
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: 0px; /* Ajusta este valor según tu necesidad */
+  right: 0px; /* Ajusta este valor según tu necesidad */
+  text-align: right;
+}
+
+/* Sector juegos*/
+.card {
+  width: 284px;
+  margin: 10px;
+}
+
 footer {
   box-shadow: 2px 5px 19px rgba(0, 0, 0, 0.495);
 }
@@ -30,14 +46,25 @@ footer {
   color: rgb(238, 209, 19);
 }
 
-
-/*cssadministrador*/
-.celdaTamanio {
-  max-width: 10rem;
-}
-
-
 /* Media Query para Dispositivos PEQUEÑOS */
+
+@media (min-width: 280px) and (max-width: 720px) {
+  .heroCarousel {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: 45%;
+  }
+
+  .texto-hero {
+    font-size: 30px;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+    bottom: 50px;
+    right: -5px;
+  }
+}
 
 @media (max-width: 640px) {
   footer {
@@ -47,4 +74,3 @@ footer {
     padding: 10px;
   }
 }
-

@@ -254,8 +254,6 @@
         <button
           class="btn btn-outline-primary btn-sm ms-3"
           id="btnCrearVideoJuego"
-          data-bs-target="#modalVideoJuego"
-          data-bs-toggle="modal"
         >
           <i class="bi bi-clipboard2-plus-fill"></i>
         </button>
@@ -269,65 +267,14 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Imagen</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Plataforma</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaVideoJuego">
-              <tr>
-                <td scope="col">1</td>
-                <td>STAR WARS Jedi Survivor</td>
-                <td class="celdaTamanio text-truncate">
-                  Cal ya no es un padawan, sino que ha madurado y se ha
-                  convertido en un poderoso caballero Jedi. Los recuerdos y las
-                  expectativas de la Orden Jedi cada vez pesan más sobre él y su
-                  cruzada contra el Imperio se vuelve más peligrosa cada segundo
-                  que pasa. Es hora de que Cal decida hasta dónde está dispuesto
-                  a llegar para salvar a sus seres queridos.
-                </td>
-                <td class="celdaTamanio text-truncate">
-                  https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
-                </td>
-                <td>Aventura</td>
-                <td>Plataforma</td>
-                <td>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="celdaTamanio" scope="col">1</td>
-                <td>STAR WARS Jedi Survivor</td>
-                <td class="celdaTamanio text-truncate">
-                  Cal ya no es un padawan, sino que ha madurado y se ha
-                  convertido en un poderoso caballero Jedi. Los recuerdos y las
-                  expectativas de la Orden Jedi cada vez pesan más sobre él y su
-                  cruzada contra el Imperio se vuelve más peligrosa cada segundo
-                  que pasa. Es hora de que Cal decida hasta dónde está dispuesto
-                  a llegar para salvar a sus seres queridos.
-                </td>
-                <td class="celdaTamanio text-truncate">
-                  https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg
-                </td>
-                <td>Aventura</td>
-                <td>Plataforma</td>
-                <td>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="bi bi-x-square"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="tablaVideoJuego"></tbody>
           </table>
         </article>
       </section>
@@ -355,7 +302,11 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="formVideoJuego">
+            <form
+              id="formVideoJuego"
+              class="row g-3 needs-validation"
+              novalidate
+            >
               <div class="mb-3">
                 <label for="codigo">Código</label>
                 <input
@@ -375,10 +326,41 @@
                   type="text"
                   class="form-control"
                   placeholder="Ej: STAR WARS Jedi Survivor"
-                  maxlength="60"
+                  maxlength="100"
                   minlength="2"
+                  required
                 />
               </div>
+
+              <div class="mb-3">
+                <label for="precio">Precio *</label>
+                <input
+                  id="precio"
+                  type="number"
+                  class="form-control"
+                  placeholder="Ej: 5000"
+                  maxlength="8"
+                  minlength="1"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="categoria">Categoria *</label>
+                <select id="categoria" class="form-control">
+                  <option value="">Selecione una opcion</option>
+                  <option value="accion">Accion</option>
+                  <option value="aventura">Aventura</option>
+                  <option value="deportivos">Deportivos</option>
+                  <option value="estrategia">Estrategia</option>
+                  <option value="familiar">Familiar</option>
+                  <option value="fantasia">Fantasía</option>
+                  <option value="mmorpg">MMORPG</option>
+                  <option value="simulacion">Simulación</option>
+                  <option value="terror">Terror</option>
+                </select>
+              </div>
+
               <div class="mb-3">
                 <label for="descripcion">Descripcion *</label>
                 <textarea
@@ -386,10 +368,12 @@
                   rows="4"
                   class="form-control"
                   placeholder="Ej: Cal ya no es un padawan,sino que ha madurado y se ha convertido en un poderoso caballero Jedi. Los recuerdos y las expectativas de la Orden Jedi cada vez pesan más sobre él y su cruzada contra el Imperio se vuelve más peligrosa cada segundo que pasa. Es hora de que Cal decida hasta dónde está dispuesto a llegar para salvar a sus seres queridos."
-                  maxlength="200"
+                  maxlength="500"
                   minlength="2"
+                  required
                 ></textarea>
               </div>
+
               <div class="mb-3">
                 <label for="imagen"
                   >Imagen *
@@ -404,64 +388,63 @@
                   placeholder="Ej: http://127.0.0.1:5500/pages/macross.png"
                   maxlength="120"
                   minlength="2"
+                  required
                 />
               </div>
 
               <div class="mb-3">
-                <label for="imagenGrande"
+                <label for="imagenMayorTamanio"
                   >Imagen mayor tamaño*
                   <small class="text-secondary">
                     (URL con formato .png, .jpg o gif)</small
                   ></label
                 >
                 <input
-                  id="imagen"
+                  id="imagenMayorTamanio"
                   type="text"
                   class="form-control"
                   placeholder="Ej: http://127.0.0.1:5500/pages/macross.png"
                   maxlength="120"
                   minlength="2"
+                  required
                 />
               </div>
 
               <div class="mb-3">
-                <label for="genero">Genero *</label>
-                <select id="genero" class="form-control">
-                  <option value="">Selecione una opcion</option>
-                  <option value="accion">Accion</option>
-                  <option value="aventura">Aventura</option>
-                  <option value="deportivos">Deportivos</option>
-                  <option value="estrategia">Estrategia</option>
-                  <option value="familiar">Familiar</option>
-                  <option value="fantasia">Fantasía</option>
-                  <option value="mmorpg">MMORPG</option>
-                  <option value="simulacion">Simulación</option>
-                  <option value="terror">Terror</option>
-                </select>
+                <label for="requisitos">Requisitos *</label>
+                <textarea
+                  id="requisitos"
+                  rows="4"
+                  class="form-control"
+                  placeholder="Ej: Procesador 1 Ghz, espacio en disco 5 Gb, Tarjeta gráfica 128 Mb."
+                  maxlength="500"
+                  minlength="2"
+                  required
+                ></textarea>
               </div>
+
               <div class="mb-3">
-                <label for="anio">Año</label>
+                <label for="desarrollador">Desarrollador *</label>
                 <input
-                  id="anio"
+                  id="desarrollador"
                   type="text"
                   class="form-control"
-                  placeholder="Ej: 2023"
-                  maxlength="4"
-                  minlength="4"
+                  placeholder="Ej: Nintendo"
+                  maxlength="60"
+                  minlength="2"
                   required
                 />
               </div>
               <div class="mb-3">
-                <label for="genero">Plataforma *</label>
-                <select id="genero" class="form-control   required ">
+                <label for="plataforma">Plataforma *</label>
+                <select id="plataforma" class="form-control">
                   <option value="">Selecione una opcion</option>
                   <option value="pc">PC</option>
                   <option value="playstation5">PlayStation 5</option>
-                  <option value="vboxSeriesX">Xbox Series X</option>
-                  <option value="nintendoSwitch">Nintendo Switch</option>
+                  <option value="xboxseriesx">Xbox Series X</option>
+                  <option value="nintendoswitch">Nintendo Switch</option>
                   <option value="moviles">Móviles</option>
                 </select>
-              
               </div>
               <div
                 class="alert alert-danger mt-3 d-none"
@@ -549,7 +532,9 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/administrador.js"></script>
-    <script src="../js/administrador.js"></script>
+    
+    <script src="../js/app.js"></script>
+    <script src="../js/administrador.js" type="module"></script>
+    <script src="../js/validacionLogin.js"></script>
   </body>
 </html>
