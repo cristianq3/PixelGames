@@ -39,7 +39,7 @@ export default class Juego {
   get codigo() {
     return this.#codigo;
   }
-  
+
   get nombre() {
     return this.#nombre;
   }
@@ -130,26 +130,3 @@ export default class Juego {
     };
   }
 }
-
-// Ejemplo de uso de la clase Juego
-const juego = new Juego(
-  "Nombre del juego",
-  3000,
-  "simulacion",
-  "Descripción del juego",
-  "ruta-imagen.png",
-  "ruta-imagen-grande.png",
-  "Procesador 1 Ghz, espacio en disco 5 Gb, Tarjeta gráfica 128 Mb",
-  "Desarrollador del Videojuego",
-  "Plataforma del juego"
-);
-
-console.log(juego.nombre); // "Nombre del juego"
-console.log(juego.precio); // "Precio del juego"
-console.log(juego.categoria); // "Categoría del juego"
-console.log(juego.descripcion); // "Descripción del juego"
-console.log(juego.imagen); // "ruta-imagen.png"
-console.log(juego.imagenMayorTamanio); // "ruta-imagen-grande.png"
-console.log(juego.requisitos); // "Requisitos del juego"
-console.log(juego.desarrollador); // "Nintendo"
-console.log(juego.plataforma); // "Plataforma del juego"
