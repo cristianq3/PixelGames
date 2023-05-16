@@ -108,7 +108,7 @@ function crearVideoJuego() {
     //los datos son validos
     // se crea el objeto Vj
     const juegoNuevo = new Juego(
-      uuidv4(),
+      codigo,
       nombre.value,
       precio.value,
       categoria.value,
@@ -119,7 +119,7 @@ function crearVideoJuego() {
       desarrollador.value,
       plataforma.value
     );
-    console.log(juegoNuevo); // "Star Wars Jedi: Survivor"
+    console.log(juegoNuevo); 
 
     //agregamos el videojuego en un array
     listaVideoJuegos.push(juegoNuevo);

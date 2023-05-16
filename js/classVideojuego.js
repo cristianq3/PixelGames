@@ -11,7 +11,7 @@ export default class Juego {
   #plataforma;
 
   constructor(
-    codigo,
+    codigo = uuidv4(),
     nombre,
     precio,
     categoria,
