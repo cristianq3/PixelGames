@@ -1,22 +1,50 @@
 let form = document.getElementById("accessLogin");
 let btnIngresar = document.getElementById("btnIngresar");
+let btnAdministrador = document.getElementById("btnAdministrador");
+let userLogeado = JSON.parse(localStorage.getItem("userLogeado"));
+let btnIngresoDelNav = document.getElementById("btnIngresoDelNav");
+let btnSalirDelNav = document.getElementById("btnSalirDelNav");
+
 
 let validUsers = [
-  { name: "Usuario1", email: "usuario1@pixelgames.com", password: "1234" },
-  { name: "admin", email: "admin@pixelgames.com", password: "abc123" },
+  { name: "Admin", email: "admin@pixelgames.com", password: "abc123" },
 ];
 
-btnIngresar.addEventListener("click", function(event) {
+btnIngresar.addEventListener("click", function (event) {
   event.preventDefault();
   ingresar();
 });
 
-form.addEventListener("keypress", function(event) {
+form.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     ingresar();
   }
 });
+console.log(userLogeado);
+
+function comprobarLocalstorage(userLogeado) {
+  //si Esta logueado:
+  if ((userLogeado === true)) {
+
+    btnSalirDelNav.className ="btn d-block";
+    btnIngresoDelNav.className="btn d-none";
+
+
+    //Mostrar boton administrador en Navbar
+    btnAdministrador.className = "nav-item d-block";
+  
+  } else {
+
+
+//Ocultar Administrador en el Navbar
+    btnAdministrador.className = "nav-item d-none";
+  }
+}
+
+
+
+//Comprobar si esta logueado.
 
 function ingresar() {
   let emailInput = document.getElementById("floatingInput");
@@ -25,7 +53,7 @@ function ingresar() {
   let email = emailInput.value;
   let password = passwordInput.value;
 
-  let validUser = validUsers.find(function(user) {
+  let validUser = validUsers.find(function (user) {
     return user.email === email && user.password === password;
   });
 
@@ -34,8 +62,19 @@ function ingresar() {
   } else if (validUser) {
     form.submit();
     alert("Acceso exitoso. ¡Bienvenido, " + validUser.name + "!");
+    userLogeado = true;
+    localStorage.setItem("userLogeado", JSON.stringify(userLogeado));
   } else {
-    alert("Los datos ingresados no son válidos. Por favor, verifica tu email y contraseña.");
+    alert(
+      "Los datos ingresados no son válidos. Por favor, verifica tu email y contraseña."
+    );
   }
 }
+
+comprobarLocalstorage (userLogeado);
+
+// boton ingresar con display block cdo este en true la variable.
+
+
+// boton salir con display none cuando la variable este en true.
 
