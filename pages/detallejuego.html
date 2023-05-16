@@ -107,36 +107,44 @@
                   </li>
                 </ul>
               </li>
+              <li class="nav-item d-none" id="btnAdministrador">
+                <a class="nav-link" href="/pages/administrador.html"
+                  >Administrador</a
+                >
+              </li>
             </ul>
             <!-- FORMULARIO DE BUSQUEDA -->
             <form
-              class="d-flex ms-0 ms-md-4"
-              role="search"
-              id="formularioBuscarNavbar"
+            class="d-flex ms-0 ms-md-4"
+            role="search"
+            id="formularioBuscarNavbar"
             >
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar Juego"
-                aria-label="Search"
-                maxlength="150"
-                minlength="3"
-              />
-              <button class="btn btn-outline-secondary border-0" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
-            </form>
-
+            <input 
+            id="buscador"
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar Juego"
+              aria-label="Search"
+              maxlength="150"
+              minlength="3"
+            />
+            <button class="btn btn-outline-secondary border-0" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
             <!-- MODAL DE LOGIN + BOTON -->
             <!-- Button trigger modal -->
+
+            <button id="btnSalirDelNav" type="button" class="btn">Salir</button>
+
             <button
+              id="btnIngresoDelNav"
               type="button"
-              class="btn fs-4 d-flex"
+              class="btn"
               data-bs-toggle="modal"
               data-bs-target="#modalLogin"
             >
-              <i class="bi bi-person-circle me-3 me-lg-0"> </i>
-              <p class="d-block d-lg-none">Ingresá</p>
+              Ingresá
             </button>
 
             <!-- Modal -->
@@ -162,16 +170,17 @@
                   </div>
                   <div class="modal-body">
                     <!-- FORMULARIO DE LOGIN -->
-                    <form>
+                    <form role="log" id="accessLogin">
                       <h6 class="h6">Ingresa con tu e-mail y contraseña:</h6>
                       <div class="form-floating mb-3">
                         <input
                           type="email"
                           maxlength="254 "
                           minlength="4"
-                          class="form-control"
+                          class="form-control controlUserPass"
                           id="floatingInput"
                           placeholder="nombre@mail.com"
+                          pattern="[a-zA-Z0-9._%+-]+@pixelgames\.com"
                           required
                         />
                         <label for="floatingInput">Usuario</label>
@@ -180,7 +189,7 @@
                         <input
                           required
                           type="password"
-                          class="form-control"
+                          class="form-control controlUserPass"
                           id="floatingPassword"
                           placeholder="Password"
                           maxlength="128"
@@ -248,18 +257,18 @@
       </nav>
     </header>
     <main>
-        <!-- Sección Hero con Caracteristicas del juego -->
-        
+      <!-- Sección Hero con Caracteristicas del juego -->
+
       <section class="heroSection position-relative">
-        <img
-          src="/img/Star-Wars.jpeg"
-          class="ImgHero"
-          alt="Star Wars"
-        />
+        <img src="/img/Star-Wars.jpeg" class="ImgHero" alt="Star Wars" />
 
         <aside class="position-absolute HeroPng contenedorTituloydetalle">
           <div class="">
-            <img src="/img/stwj-hero-large-logo-xl.png.adapt.crop3x2.1023w.png" class="TituloPng" alt="Logo Star Wars">
+            <img
+              src="/img/stwj-hero-large-logo-xl.png.adapt.crop3x2.1023w.png"
+              class="TituloPng"
+              alt="Logo Star Wars"
+            />
             <!-- <h1 class="">
 
 
@@ -354,5 +363,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/app.js"></script>
+    <script src="/js/buscador.js"></script>
+    <script src="/js/validacionLogin.js"></script>
   </body>
 </html>

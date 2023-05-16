@@ -46,6 +46,9 @@ footer {
   color: rgb(238, 209, 19);
 }
 
+.controlUserPass:invalid { border-color: red; } 
+.controlUserPass:valid { border-color: green; }
+
 /* Media Query para Dispositivos PEQUEÑOS */
 
 @media (min-width: 280px) and (max-width: 720px) {
