@@ -74,45 +74,6 @@ function ingresar() {
 
 comprobarLocalstorage(userLogeado);
 
-// boton ingresar con display block cdo este en true la variable.
-
-// boton salir con display none cuando la variable este en true.
-
-// Cierre de sesión y sitio admin inaccesible
-
-btnSalirDelNav.addEventListener("click", cerrarSesionAdministrador);
-
-function cerrarSesionAdministrador() {
-  userLogeado = false;
-  localStorage.removeItem("userLogeado");
-  
-  mostrarModalYRedireccionar();
-}
-
-function mostrarModalYRedireccionar() {
-
-  const modal = document.getElementById("modalCierre");
-  modal.style.display = "block";
-
-  const btnRedireccionar = document.getElementById("btnRedireccionar");
-  btnRedireccionar.addEventListener("click", function() {
-    window.location.href = "inicio.html"; 
-  });
-
-  setTimeout(function() {
-    modal.style.display = "none";
-  }, 3000);
-}
-
-
-
-// Mensaje de cierre de sesión del administrador
-
-
-
-
-
-
 
 
 

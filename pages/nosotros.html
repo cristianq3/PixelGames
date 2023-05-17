@@ -22,7 +22,7 @@
     />
     <!-- Estilos propios CSS -->
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/nosotros.css">
+    <link rel="stylesheet" href="/css/nosotros.css" />
 
     <title>PixelGames</title>
   </head>
@@ -55,7 +55,10 @@
           <div class="collapse navbar-collapse" id="ContenidoNavbar">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/index.html"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
                   >Inicio</a
                 >
               </li>
@@ -115,23 +118,23 @@
             </ul>
             <!-- FORMULARIO DE BUSQUEDA -->
             <form
-            class="d-flex ms-0 ms-md-4"
-            role="search"
-            id="formularioBuscarNavbar"
+              class="d-flex ms-0 ms-md-4"
+              role="search"
+              id="formularioBuscarNavbar"
             >
-            <input 
-            id="buscador"
-              class="form-control me-2"
-              type="search"
-              placeholder="Buscar Juego"
-              aria-label="Search"
-              maxlength="150"
-              minlength="3"
-            />
-            <button class="btn btn-outline-secondary border-0" type="submit">
-              <i class="bi bi-search"></i>
-            </button>
-          </form>
+              <input
+                id="buscador"
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar Juego"
+                aria-label="Search"
+                maxlength="150"
+                minlength="3"
+              />
+              <button class="btn btn-outline-secondary border-0" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
             <!-- MODAL DE LOGIN + BOTON -->
             <!-- Button trigger modal -->
 
@@ -146,14 +149,6 @@
             >
               Ingresá
             </button>
-
-             <!--Modal de cierre de sesion-->
-             <div id="modalCierre" class="modalClose">
-              <div class="modal-content contenidoMCierre">
-                <p>Se ha cerrado la sesión del administrador.</p>
-                <button id="btnRedireccionar">Ir al inicio</button>
-              </div>
-            </div>
 
             <!-- Modal -->
             <div
@@ -266,60 +261,96 @@
     </header>
     <main class="nosotros">
       <section class="conteiner">
-          <article class="roow" id="bannerQuienesSomos">
-            <hr>
-              <p class="h1 text-center text-bg-dark d-flex justify-content-center ">
-                "El grupo "PixelGame" se organizó desde primer momento para realizar las tareas de forma conjunta y ordenadas
-                Asignando a cada miembro que debía realizar, llevando siempre un seguimiento por si alguno de los miembros 
-                Necesitaban de ayuda cualquiera sea el tipo. Conformando asi comunicación y fluidez al realizar el proyecto"
+        <article class="roow" id="bannerQuienesSomos">
+          <hr />
+          <p class="h1 text-center text-bg-dark d-flex justify-content-center">
+            "El grupo "PixelGame" se organizó desde primer momento para realizar
+            las tareas de forma conjunta y ordenadas Asignando a cada miembro
+            que debía realizar, llevando siempre un seguimiento por si alguno de
+            los miembros Necesitaban de ayuda cualquiera sea el tipo.
+            Conformando asi comunicación y fluidez al realizar el proyecto"
+          </p>
+          <hr />
+          <p class="h2 text-center text-bg-dark d-flex justify-content-center">
+            A continuacion sus Integrantes
+          </p>
+        </article>
+        <article class="row d-flex justify-content-around">
+          <aside class="col-xl-4 col-sm-6 py-1">
+            <img
+              src="../img/Marcelo.png"
+              class="quienesSomos borderojoquienessomos"
+              alt="Marcelo Leiva"
+            />
+            <div class="card-body">
+              <p class="h3 text-center nombreequipo text-bg-dark">
+                Marcelo G. Leiva
               </p>
-              <hr>
-              <p class="h2 text-center text-bg-dark d-flex justify-content-center">
-                  A continuacion sus Integrantes
-              </p>
-              
-          </article>
-          <article class="row d-flex justify-content-around">
-              <aside class="col-xl-4 col-sm-6 py-1">
-                  <img src="../img/Marcelo.png" class="quienesSomos borderojoquienessomos" alt="Marcelo Leiva" />
-                  <div class="card-body">
-                      <p class="h3 text-center nombreequipo text-bg-dark">Marcelo G. Leiva</p>
-                  </div>
-              </aside>
-              <aside class="col-xl-4 col-sm-6 py-1">
-                  <img src="../img/Rosario.png" class="quienesSomos borderojoquienessomos" alt="Rosario Blac Sleiman" />
-                  <div class="card-body">
-                      <p class="h3 text-center nombreequipo text-bg-dark">Rosario Blac Sleiman</p>
-                  </div>
-              </aside>
-              <aside class="col-xl-4 col-sm-6 pb-1 p">
-                  <img src="../img/Ivan.png" class="card-img-top quienesSomos borderojoquienessomos" alt="Walter Duarte " />
-                  <div class="card-body">
-                      <p class="h3 text-center nombreequipo text-bg-dark">Walter Ivan Duarte</p>
-                  </div>
-              </aside>
-              <aside class="col-xl-4 col-sm-6">
-                  <img src="../img/Cristian.png" class="card-img-top quienesSomos borderojoquienessomos"
-                      alt="Cristian Quiroga" />
-                  <div class="card-body">
-                      <p class="h3 text-center nombreequipo text-bg-dark">Cristian Quiroga</p>
-                  </div>
-              </aside>
-              <aside class="col-xl-4 col-sm-6 py-1">
-                <img src="../img/Tomas.png" class="quienesSomos borderojoquienessomos" alt="Tomas Quispe" />
-                <div class="card-body">
-                    <p class="h3 text-center nombreequipo text-bg-dark">Tomas Quispe Navarro</p>
-                </div>
-            </aside>
-            <aside class="col-xl-4 col-sm-6 py-1">
-              <img src="../img/Belen.png" class="quienesSomos borderojoquienessomos" alt="Emilia Ramos" />
-              <div class="card-body">
-                  <p class="h3 text-center nombreequipo text-bg-dark">Emilia Belen Ramos</p> 
-              </div>
+            </div>
           </aside>
-          </article>
+          <aside class="col-xl-4 col-sm-6 py-1">
+            <img
+              src="../img/Rosario.png"
+              class="quienesSomos borderojoquienessomos"
+              alt="Rosario Blac Sleiman"
+            />
+            <div class="card-body">
+              <p class="h3 text-center nombreequipo text-bg-dark">
+                Rosario Blac Sleiman
+              </p>
+            </div>
+          </aside>
+          <aside class="col-xl-4 col-sm-6 pb-1 p">
+            <img
+              src="../img/Ivan.png"
+              class="card-img-top quienesSomos borderojoquienessomos"
+              alt="Walter Duarte "
+            />
+            <div class="card-body">
+              <p class="h3 text-center nombreequipo text-bg-dark">
+                Walter Ivan Duarte
+              </p>
+            </div>
+          </aside>
+          <aside class="col-xl-4 col-sm-6">
+            <img
+              src="../img/Cristian.png"
+              class="card-img-top quienesSomos borderojoquienessomos"
+              alt="Cristian Quiroga"
+            />
+            <div class="card-body">
+              <p class="h3 text-center nombreequipo text-bg-dark">
+                Cristian Quiroga
+              </p>
+            </div>
+          </aside>
+          <aside class="col-xl-4 col-sm-6 py-1">
+            <img
+              src="../img/Tomas.png"
+              class="quienesSomos borderojoquienessomos"
+              alt="Tomas Quispe"
+            />
+            <div class="card-body">
+              <p class="h3 text-center nombreequipo text-bg-dark">
+                Tomas Quispe Navarro
+              </p>
+            </div>
+          </aside>
+          <aside class="col-xl-4 col-sm-6 py-1">
+            <img
+              src="../img/Belen.png"
+              class="quienesSomos borderojoquienessomos"
+              alt="Emilia Ramos"
+            />
+            <div class="card-body">
+              <p class="h3 text-center nombreequipo text-bg-dark">
+                Emilia Belen Ramos
+              </p>
+            </div>
+          </aside>
+        </article>
       </section>
-  </main>
+    </main>
 
     <!-- Footer con info de RRSS y contacto -->
     <footer
