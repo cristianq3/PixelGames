@@ -30,15 +30,16 @@ main {
 
 /* Sector juegos*/
 .card {
-  width: 284px;
+  width: 350px;
   margin: 10px;
 }
 
 .nombreJuego {
-  top: 10%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 3px -1px 6px #403e41;
+  text-shadow: 3px -1px 6px #000000;
+
 }
 
 footer {
@@ -64,6 +65,11 @@ footer {
     height: 80vh;
     object-fit: cover;
     object-position: 45%;
+  }
+
+  .card {
+    width: 284px;
+    margin: 10px;
   }
 
   texto-hero {
