@@ -3,7 +3,7 @@ const parametroCodigo = new URLSearchParams(window.location.search);
 console.log(parametroCodigo.get('codigo'));
 //aqui hago el read
 let listaVideoJuegos =
-  JSON.parse(localStorage.getItem("listaJuegos")) || [];
+  JSON.parse(localStorage.getItem("listaVideoJuegos")) || [];
 
 const juegoBuscado = listaVideoJuegos.find((juego)=> juego.codigo === parametroCodigo.get('codigo'));
 
