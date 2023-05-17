@@ -24,7 +24,7 @@ main.innerHTML = `
 class="d-flex justify-content-evenly align-items-center row pt-sm-2 pt-md-5 pb-3"
 >
 
-<aside class="HeroPng contenedorTituloydetalle vidrio p-1">
+<aside class="HeroPng contenedorTituloydetalle vidrio p-2 mt-3 d-flex justify-content-center flex-column align-items-center">
   <div class="">
 
     <p class="lead descripcionJuego w-100">
@@ -32,7 +32,7 @@ class="d-flex justify-content-evenly align-items-center row pt-sm-2 pt-md-5 pb-3
     </p>
   </div>
 
-  <span class="btn rounded w-25 bg-success m-2">$2999</span>
+  <span class="precioJuego p-3  rounded m-2 text-center mb-4 p-2 fs-1 "> <i class="bi bi-joystick mx-2"></i> $2999 </span>
   <a href="/pages/error404.html" class="btn btn-warning"
     >Compralo ya!</a
   >
@@ -42,14 +42,14 @@ class="d-flex justify-content-evenly align-items-center row pt-sm-2 pt-md-5 pb-3
 </aside>
 </section>
 <article>
-<h2 class="text-center pb-3">Detalles:</h2>
+<h2 class="text-center pb-3 mt-4 fs-1">Detalles:</h2>
 
 <ul
-  class="list-unstyled d-flex justify-content-evenly text-center flex-wrap row"
+  class="list-unstyled justify-content-around text-center flex-wrap row"
 >
   <li class="col-sm-12 col-md-6 col-lg-3">
     <h5 class="">Requerimientos:</h5>
-    <p class="lead">
+    <p class="lead w-75">
      ${juego.requisitos}
     </p>
   </li>
