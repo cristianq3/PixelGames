@@ -74,6 +74,22 @@ function ingresar() {
 
 comprobarLocalstorage(userLogeado);
 
+// boton ingresar con display block cdo este en true la variable.
+
+// boton salir con display none cuando la variable este en true.
+
+// Cierre de sesión y sitio admin inaccesible
+
+
+
+
+// Mensaje de cierre de sesión del administrador
+
+
+
+
+
+
 
 
 
