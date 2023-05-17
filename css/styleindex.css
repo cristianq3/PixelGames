@@ -10,6 +10,9 @@ body {
   flex-direction: column;
 }
 
+#textoTitulo {
+  font-size: 55px ;
+}
 main {
   flex-grow: 1;
 }
@@ -32,6 +35,13 @@ main {
 .card {
   width: 350px;
   margin: 10px;
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.69); 
+box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.69);
+}
+
+.card:hover {
+  filter: brightness(120%);
+
 }
 
 .nombreJuego {

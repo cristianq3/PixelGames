@@ -15,17 +15,15 @@ function crearColumna(juego) {
       class="card-img-top img-fluid mt-2 img"
       alt="${juego.titulo}"
     />
-    <span class="position-absolute nombreJuego"><p class=" text-cent fw-bolder text-warning">Star Wars: Survivor</p></span>
+    <span class="position-absolute nombreJuego"><p class=" text-cent fw-bolder text-warning fs-3">${juego.nombre}</p></span>
   </div>
-  <p class="card-text pt-3 mx-3 text-wrap">
-   ${juego.descripcion}
-  </p>
+
   <div
-    class="w-100 d-flex justify-content-start p-2 m-1 align-items-center flex-wrap"
+    class="w-100 d-flex justify-content-evenly p-2 m-1 align-items-center flex-wrap"
   >
-    <span class="badge text-bg-primary mx-2">PC</span>
-    <span class="badge text-bg-secondary mx-2">Epic Games Enterprise</span>
-    <span class="badge text-bg-success mx-2">2023</span>
+    <span class="badge text-bg-primary mx-2">${juego.plataforma}</span>
+    <span class="badge text-bg-secondary mx-2">${juego.desarrollador}</span>
+    <span class="badge text-bg-success mx-2">${juego.categoria}</span>
   </div>
   <div
     class="card-body d-flex justify-content-around align-items-center"
@@ -35,17 +33,13 @@ function crearColumna(juego) {
       type="button"
       class="btn btn-success rounded-5 shadow-lg fw-bold"
     >
-      ${juego.precio}
+      $${juego.precio}
     </button>
   </div>
 </article>`;
 }
 
 function navegarDetalleJuego(codigo){
-  console.log(codigo);
-  console.log(window.location);
-  // nombre de dominio
-  console.log(window.location.origin + '/pages/detallejuego.html?codigo='+ codigo);
  window.location.href = window.location.origin + '/pages/detallejuego.html?codigo='+ codigo;
 }
 

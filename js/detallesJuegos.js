@@ -1,29 +1,33 @@
 const parametroCodigo = new URLSearchParams(window.location.search);
 // console.log(parametroCodigo);
-console.log(parametroCodigo.get('codigo'));
+console.log(parametroCodigo.get("codigo"));
 //aqui hago el read
 let listaVideoJuegos =
   JSON.parse(localStorage.getItem("listaVideoJuegos")) || [];
 
-const juegoBuscado = listaVideoJuegos.find((juego)=> juego.codigo === parametroCodigo.get('codigo'));
 
-let main = document.getElementById('contenedorTotal');
+const juego = listaVideoJuegos.find(
+  (juego) => juego.codigo === parametroCodigo.get("codigo")
+);
+
+console.log(juego)
+let main = document.getElementById("contenedorTotal");
+
 main.innerHTML = `
-<section class="heroSection" id="contenedorHero">
-<img src="/img/index/apex.jpeg" class="ImgHero" alt="Star Wars" />
+<section class="heroSection" id="contenedorHero container-fluid">
+<img src="${juego.imagenMayorTamanio}" class="ImgHero" alt="${juego.nombre}" />
 </section>
-
 <section
 class="d-flex justify-content-center align-items-center row pt-sm-2 pt-md-5 pb-3"
 >
-<aside class="col-12 col-md-6">
-  <img src="${Juego.imagen}" class="img-fluid" alt="apex" />
+<aside class="col-12 col-md-6 ">
+  <img src="${juego.imagen}" class="img-fluid shadow-lg rounded-4" alt="apex" />
 </aside>
 <aside class="HeroPng contenedorTituloydetalle">
   <div class="">
 
     <p class="lead descripcionJuego w-100">
-    ${Juego.descripcion}
+    ${juego.descripcion}
     </p>
   </div>
 
@@ -37,25 +41,25 @@ class="d-flex justify-content-center align-items-center row pt-sm-2 pt-md-5 pb-3
 <h2 class="text-center pb-3">Detalles:</h2>
 
 <ul
-  class="list-unstyled d-flex justify-content-evenly text-center flex-wrap"
+  class="list-unstyled d-flex justify-content-evenly text-center flex-wrap row"
 >
-  <li>
-    <h5>Requerimientos:</h5>
+  <li class="col-sm-12 col-md-6 col-lg-3">
+    <h5 class="">Requerimientos:</h5>
     <p class="lead">
-     ${Juego.requerimientos}
+     ${juego.requisitos}
     </p>
   </li>
-  <li>
+  <li class="col-sm-12 col-md-6 col-lg-3">
     <h5>Categoria:</h5>
-    <p class="lead"> ${Juego.categoria}|</p>
+    <p class="lead"> ${juego.categoria}|</p>
   </li>
-  <li>
+  <li class="col-sm-12 col-md-6 col-lg-3">
     <h5>Desarrollador:</h5>
-    <p class="lead"> ${Juego.desarrollador}</p>
+    <p class="lead"> ${juego.desarrollador}</p>
   </li>
-  <li>
+  <li class="col-sm-12 col-md-6 col-lg-3">
     <h5>Plataforma:</h5>
-    <p class="lead">${Juego.plataforma}</p>
+    <p class="lead">${juego.plataforma}</p>
   </li>
 </ul>
-</article>`
+</article>`;
