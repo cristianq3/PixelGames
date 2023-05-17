@@ -115,23 +115,23 @@
             </ul>
             <!-- FORMULARIO DE BUSQUEDA -->
             <form
-            class="d-flex ms-0 ms-md-4"
-            role="search"
-            id="formularioBuscarNavbar"
+              class="d-flex ms-0 ms-md-4"
+              role="search"
+              id="formularioBuscarNavbar"
             >
-            <input 
-            id="buscador"
-              class="form-control me-2"
-              type="search"
-              placeholder="Buscar Juego"
-              aria-label="Search"
-              maxlength="150"
-              minlength="3"
-            />
-            <button class="btn btn-outline-secondary border-0" type="submit">
-              <i class="bi bi-search"></i>
-            </button>
-          </form>
+              <input
+                id="buscador"
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar Juego"
+                aria-label="Search"
+                maxlength="150"
+                minlength="3"
+              />
+              <button class="btn btn-outline-secondary border-0" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
             <!-- MODAL DE LOGIN + BOTON -->
             <!-- Button trigger modal -->
 
@@ -256,38 +256,61 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="container-fluid" id="contenedorTotal">
       <!-- Sección Hero con Caracteristicas del juego -->
 
-      <section class="heroSection position-relative">
-        <img src="/img/Star-Wars.jpeg" class="ImgHero" alt="Star Wars" />
+      <section class="heroSection" id="contenedorHero">
+        <img src="/img/index/apex.jpeg" class="ImgHero" alt="Star Wars" />
+      </section>
 
-        <aside class="position-absolute HeroPng contenedorTituloydetalle">
+      <section
+        class="d-flex justify-content-center align-items-center row pt-sm-2 pt-md-5 pb-3"
+      >
+        <aside class="col-12 col-md-6">
+          <img src="${Juego.imagen}" class="img-fluid" alt="apex" />
+        </aside>
+        <aside class="HeroPng contenedorTituloydetalle">
           <div class="">
-            <img
-              src="/img/stwj-hero-large-logo-xl.png.adapt.crop3x2.1023w.png"
-              class="TituloPng"
-              alt="Logo Star Wars"
-            />
-            <!-- <h1 class="">
-
-
-
-              <strong class="TituloJuego">Star Wars:</strong> <br/>
-             <p class="fraseJuego"> </p> Jedi Survivor
-            </h1> -->
-            <p class="lead descripcionJuego">
+        
+            <p class="lead descripcionJuego w-100">
               La historia de Cal Kestis continúa en STAR WARS Jedi: Survivor™,
               una nueva aventura épica que llevará a Cal aún más lejos mientras
               lucha por proteger la galaxia de caer en la oscuridad.
             </p>
           </div>
 
+          <span class="btn rounded w-25 bg-success m-2">$2999</span>
           <a href="/pages/error404.html" class="btn btn-warning"
             >Compralo ya!</a
           >
         </aside>
       </section>
+      <article>
+        <h2 class="text-center pb-3">Detalles:</h2>
+
+        <ul
+          class="list-unstyled d-flex justify-content-evenly text-center flex-wrap"
+        >
+          <li>
+            <h5>Requerimientos:</h5>
+            <p class="lead">
+             ${Juego.requerimientos}
+            </p>
+          </li>
+          <li>
+            <h5>Categoria:</h5>
+            <p class="lead"> ${Juego.categoria}|</p>
+          </li>
+          <li>
+            <h5>Desarrollador:</h5>
+            <p class="lead"> ${Juego.desarrollador}</p>
+          </li>
+          <li>
+            <h5>Plataforma:</h5>
+            <p class="lead">${Juego.plataforma}</p>
+          </li>
+        </ul>
+      </article>
     </main>
 
     <!-- Footer con info de RRSS y contacto -->
@@ -365,5 +388,6 @@
     <script src="/js/app.js"></script>
     <script src="/js/buscador.js"></script>
     <script src="/js/validacionLogin.js"></script>
+    <script src="/js/detallesJuegos.js"></script>
   </body>
 </html>
