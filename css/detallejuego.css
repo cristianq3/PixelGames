@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 .HeroPng {
-  width: 400px;
+  width:45%;
   top: 20%;
   right: 5%;
   text-shadow: 1px 1px 5px #000000;
   color: #ffffff;
+
 }
 /* Ajustes Imagen Grande de Juego */
 .ImgHero {
@@ -20,28 +21,34 @@
 
 }
 
+.precioJuego{
+
+  background-color: #c5e225;
+  
+
+}
+
 .vidrio {
-  background-color: rgba(255, 255, 255, 0.136);
   border-radius: 29px;
-  border: rgba(216, 221, 197, 0.147);
+  border: rgba(200, 255, 0, 0.147);
   backdrop-filter: blur(4px);
 }
 
 
 .textoHero {
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 3px -1px 6px #000000;
-  font-size: 6rem;
-  color: yellow;
+  text-shadow: 3px -1px 6px #c5e225;
+  font-size: 5rem;
+  color: rgba(242, 255, 0, 0.818);
   font-family: 'Rubik Mono One', sans-serif;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.166);
+
   border-radius: 29px;
-  border: rgba(216, 221, 197, 0.147);
+
   backdrop-filter: blur(4px);
-  padding: 2rem;
+  padding: 3rem;
 }
 
 
@@ -102,7 +109,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: 3px -1px 6px #000000;
-    font-size: 59px;
+    font-size: 2rem;
     text-align: center;
   
   }

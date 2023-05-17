@@ -12,6 +12,8 @@ body {
 
 #textoTitulo {
   font-size: 55px ;
+    text-shadow: 1px 1px 5px #000000;
+
 }
 main {
   flex-grow: 1;
@@ -118,6 +120,7 @@ footer {
     position: absolute;
     bottom: 20px;
     right: -5px;
+    text-shadow: 1px 1px 5px #000000;
   } 
 
 
