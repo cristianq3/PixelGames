@@ -14,16 +14,17 @@ console.log(juego)
 let main = document.getElementById("contenedorTotal");
 
 main.innerHTML = `
-<section class="heroSection" id="contenedorHero container-fluid">
+<section class="heroSection" id="contenedorHero  position-relative">
 <img src="${juego.imagenMayorTamanio}" class="ImgHero" alt="${juego.nombre}" />
+
+<h1 class="position-absolute textoHero">${juego.nombre}</h1>
+
 </section>
 <section
-class="d-flex justify-content-center align-items-center row pt-sm-2 pt-md-5 pb-3"
+class="d-flex justify-content-evenly align-items-center row pt-sm-2 pt-md-5 pb-3"
 >
-<aside class="col-12 col-md-6 ">
-  <img src="${juego.imagen}" class="img-fluid shadow-lg rounded-4" alt="apex" />
-</aside>
-<aside class="HeroPng contenedorTituloydetalle">
+
+<aside class="HeroPng contenedorTituloydetalle vidrio p-1">
   <div class="">
 
     <p class="lead descripcionJuego w-100">
@@ -35,6 +36,9 @@ class="d-flex justify-content-center align-items-center row pt-sm-2 pt-md-5 pb-3
   <a href="/pages/error404.html" class="btn btn-warning"
     >Compralo ya!</a
   >
+</aside>
+<aside class="col-12 col-md-6 ">
+  <img src="${juego.imagen}" class="img-fluid shadow-lg rounded-4 imgCard" alt="${juego.nombre}" />
 </aside>
 </section>
 <article>

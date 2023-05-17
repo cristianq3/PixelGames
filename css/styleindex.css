@@ -37,7 +37,11 @@ main {
   margin: 10px;
   -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.69); 
 box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.69);
+
+min-height: 450px;
 }
+
+
 
 .card:hover {
   filter: brightness(120%);

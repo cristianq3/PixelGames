@@ -1,4 +1,6 @@
 /* Posicionnamiento del titulo del juego */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
 .HeroPng {
   width: 400px;
   top: 20%;
@@ -13,6 +15,35 @@
   object-fit: cover;
   object-position: 30%;
 }
+.contenedorTituloydetalle p {
+  font-size: 1.9rem;
+
+}
+
+.vidrio {
+  background-color: rgba(255, 255, 255, 0.136);
+  border-radius: 29px;
+  border: rgba(216, 221, 197, 0.147);
+  backdrop-filter: blur(4px);
+}
+
+
+.textoHero {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 3px -1px 6px #000000;
+  font-size: 6rem;
+  color: yellow;
+  font-family: 'Rubik Mono One', sans-serif;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.166);
+  border-radius: 29px;
+  border: rgba(216, 221, 197, 0.147);
+  backdrop-filter: blur(4px);
+  padding: 2rem;
+}
+
 
 .TituloJuego {
   font-size: 90px;
@@ -38,6 +69,17 @@ footer {
 
 /* Media Querys */
 @media (max-width: 640px) {
+  .textoHero {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 3px -1px 6px #000000;
+    font-size: 59px;
+    text-align: center;
+  
+  }
+
+
   /* Posicionamiento de imagen principal y letras */
   .HeroPng {
     width: fit-content;
