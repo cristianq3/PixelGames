@@ -1,0 +1,150 @@
+/* Posicionnamiento del titulo del juego */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+.HeroPng {
+  width:45%;
+  top: 20%;
+  right: 5%;
+  text-shadow: 1px 1px 5px #000000;
+  color: #ffffff;
+
+}
+/* Ajustes Imagen Grande de Juego */
+.ImgHero {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 30%;
+}
+.contenedorTituloydetalle p {
+  font-size: 1.9rem;
+
+}
+
+.precioJuego{
+
+  background-color: #c5e225;
+  
+
+}
+
+.vidrio {
+  border-radius: 29px;
+  border: rgba(200, 255, 0, 0.147);
+  backdrop-filter: blur(4px);
+}
+
+
+.textoHero {
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 3px -1px 6px #c5e225;
+  font-size: 5rem;
+  color: rgba(242, 255, 0, 0.818);
+  font-family: 'Rubik Mono One', sans-serif;
+  text-align: center;
+
+  border-radius: 29px;
+
+  backdrop-filter: blur(4px);
+  padding: 3rem;
+}
+
+
+.TituloJuego {
+  font-size: 90px;
+}
+
+.btn-warning {
+  width: 100%;
+  text-shadow: 2px 2px 9px #000000;
+}
+
+footer {
+    z-index: 2;
+}
+
+
+.TituloPng {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+/*Modal cierre */
+.modalClose {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.contenidoMCierre {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+}
+
+#btnRedireccionar {
+  margin-top: 10px;
+}
+/*Validacion de login */
+
+.controlUserPass:invalid { border-color: red; } 
+.controlUserPass:valid { border-color: green; }
+
+
+
+/* Media Querys */
+@media (max-width: 640px) {
+  .textoHero {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 3px -1px 6px #000000;
+    font-size: 2rem;
+    text-align: center;
+  
+  }
+
+
+  /* Posicionamiento de imagen principal y letras */
+  .HeroPng {
+    width: fit-content;
+    top: 25%;
+    left: 20%;
+    font-size: 15px;
+  }
+  .contenedorTituloydetalle {
+    width: 280px;
+}
+  .TituloJuego {
+    font-size: 50px;
+  }
+  .fraseJuego {
+    font-size: 9px;
+  }
+  .descripcionJuego {
+    font-size: 15px;
+    width: 100%;
+  }
+  .btn-warning {
+    width: 100%;
+    text-shadow: 2px 2px 9px #000000;
+  }
+  .heroSection .ImgHero {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 30%;
+  }
+
+
+}

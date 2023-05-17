@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta title="PixelGames" />
     <meta
       author="Tomas Quispe, Emilia Belen Ramos, Rosario Blac Sleiman, Leiva Marcelo, Walter Ivan Duarte, Cristian Quiroga"
@@ -21,6 +22,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
     <!-- Estilos propios CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/styleError.css" />
 
     <title>PixelGames</title>
@@ -54,7 +56,10 @@
           <div class="collapse navbar-collapse" id="ContenidoNavbar">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
                   >Inicio</a
                 >
               </li>
@@ -106,6 +111,11 @@
                   </li>
                 </ul>
               </li>
+              <li class="nav-item d-none" id="btnAdministrador">
+                <a class="nav-link" href="/pages/administrador.html"
+                  >Administrador</a
+                >
+              </li>
             </ul>
             <!-- FORMULARIO DE BUSQUEDA -->
             <form
@@ -114,6 +124,7 @@
               id="formularioBuscarNavbar"
             >
               <input
+                id="buscador"
                 class="form-control me-2"
                 type="search"
                 placeholder="Buscar Juego"
@@ -125,17 +136,19 @@
                 <i class="bi bi-search"></i>
               </button>
             </form>
-
             <!-- MODAL DE LOGIN + BOTON -->
             <!-- Button trigger modal -->
+
+            <button id="btnSalirDelNav" type="button" class="btn">Salir</button>
+
             <button
+              id="btnIngresoDelNav"
               type="button"
-              class="btn fs-4 d-flex"
+              class="btn"
               data-bs-toggle="modal"
               data-bs-target="#modalLogin"
             >
-              <i class="bi bi-person-circle me-3 me-lg-0"> </i>
-              <p class="d-block d-lg-none">Ingresá</p>
+              Ingresá
             </button>
 
             <!-- Modal -->
@@ -161,16 +174,17 @@
                   </div>
                   <div class="modal-body">
                     <!-- FORMULARIO DE LOGIN -->
-                    <form>
+                    <form role="log" id="accessLogin">
                       <h6 class="h6">Ingresa con tu e-mail y contraseña:</h6>
                       <div class="form-floating mb-3">
                         <input
                           type="email"
                           maxlength="254 "
                           minlength="4"
-                          class="form-control"
+                          class="form-control controlUserPass"
                           id="floatingInput"
                           placeholder="nombre@mail.com"
+                          pattern="[a-zA-Z0-9._%+-]+@pixelgames\.com"
                           required
                         />
                         <label for="floatingInput">Usuario</label>
@@ -179,7 +193,7 @@
                         <input
                           required
                           type="password"
-                          class="form-control"
+                          class="form-control controlUserPass"
                           id="floatingPassword"
                           placeholder="Password"
                           maxlength="128"
@@ -247,14 +261,85 @@
       </nav>
     </header>
     <main>
-        <div class="error">
+      <!--Se realiza pagina de Error404-->
+      <div class="container-fluid">
+        <div class="row justify-content-center d-flex">
+          <div class="error">
             <h1>404</h1>
+
             <p>Lo siento, la página que buscas no se encuentra disponible.</p>
-            <p>
+            <p class="icons">
               <a href="/">Haz clic aquí para volver a la página principal</a>
             </p>
           </div>
+        </div>
+      </div>
     </main>
+    <footer
+      class="bg-body-tertiary pt-3 d-flex justify-content-center flex-column align-items-center"
+    >
+      <div class="container row d-flex flex-wrap">
+        <aside
+          class="justify-content-center align-items-center col-12 col-md-4"
+        >
+          <ul class="list-unstyled text-center">
+            <li class="pb-3">
+              <a class="navbar-brand fs-3" href="/index.html"
+                ><b>Pixel</b>Games</a
+              >
+            </li>
+
+            <li>
+              <a class="btn btn-primary-lg fs-3" href="/pages/error404.html">
+                Suscribete a <i class="bi bi-joystick"></i> <b>Pixel</b> G +
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <aside class="d-flex flex-column text-center col-12 col-md-4">
+          <h4 class="h6">Seguinos en redes</h4>
+          <div class="d-flex justify-content-center gap-4 pt-2 pt-md-3">
+            <a href="/pages/error404.html"
+              ><i class="bi bi-facebook p-1 fs-3 linkSolo"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-instagram p-1 fs-3 linkSolo"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-twitter p-1 fs-3 linkSolo"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-twitch p-1 fs-3 linkSolo"></i
+            ></a>
+          </div>
+        </aside>
+        <aside class="col-12 col-md-4 text-center">
+          <ul class="list-unstyled d-flex flex-column align-items-center">
+            <h4 class="h6 container pt-4 pt-md-0">Navegacion</h4>
+            <div class="row justify-content-between">
+              <li class="col-2 col-md-12">
+                <a class="linkSolo" href="/pages/nosotros.html">Nosotros</a>
+              </li>
+              <li class="col-2 col-md-12">
+                <a class="linkSolo" href="/pages/error404.html">Contacto</a>
+              </li>
+              <li class="col-2 col-md-12 linkSolo">
+                <a class="linkSolo" href="/pages/error404.html">Tienda</a>
+              </li>
+              <li class="col-2 col-md-12 linkSolo">
+                <a class="linkSolo" href="/pages/error404.html">Legales</a>
+              </li>
+            </div>
+          </ul>
+        </aside>
+      </div>
+      <!-- PIE DE PAGINA ABAJO DE Info de FOOTER -->
+      <div class="bg-body-secondary piePagina text-center px-2 py-1 rounded">
+        Los servicios y productos que presta y comercializa PixelGames S.A.
+        están sujetos a disponibilidad técnica - © 2023 PixelGames - Todos los
+        derechos reservados - Avenida del Lucero Fugáz 459 - S.M. de Tucumán
+      </div>
+    </footer>
     <!-- Boostrap JS-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -262,6 +347,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/app.js"></script>
+    <script src="/js/buscador.js"></script>
+    <script src="/js/validacionLogin.js"></script>
   </body>
 </html>
- 
