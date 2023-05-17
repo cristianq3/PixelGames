@@ -15,7 +15,7 @@ function crearColumna(juego) {
       class="card-img-top img-fluid mt-2 img"
       alt="${juego.titulo}"
     />
-    <span class="position-absolute nombreJuego"><p class=" text-cent fw-bolder text-warning fs-3">${juego.nombre}</p></span>
+    <span class="position-absolute nombreJuego"><p class=" text-cent fw-bolder text-white fs-3">${juego.nombre}</p></span>
   </div>
 
   <div

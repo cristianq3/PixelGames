@@ -1,9 +1,7 @@
 function validarCantidadCaracteres(texto, min, max) {
   if (texto.length >= min && texto.length <= max) {
-    console.log("dato correcto");
     return true;
   } else {
-    console.log("dato erroneo");
     return false;
   }
 }
@@ -14,16 +12,13 @@ function validarPrecio(precio) {
 
   // Comparamos el precio con el patrón utilizando el método test()
   if (patron.test(precio)) {
-    console.log("la expresion regular funciona");
     return true;
   } else {
-    console.log("la expresion regular fallo");
     return false;
   }
 }
 
 function validarCategoria(categoria) {
-  console.log(categoria);
   if (
     categoria === "accion" ||
     categoria === "aventura" ||
@@ -35,20 +30,16 @@ function validarCategoria(categoria) {
     categoria === "simulacion" ||
     categoria === "terror"
   ) {
-    console.log("El género es un valor de la lista desplegable");
     return true;
   } else {
-    console.log("El género no es un valor de la lista desplegable");
     return false;
   }
 }
 
 function validarDescripcion(descripcion, min, max) {
   if (descripcion.length >= min && descripcion.length <= max) {
-    console.log("dato correcto");
     return true;
   } else {
-    console.log("dato erroneo");
     return false;
   }
 }
@@ -58,10 +49,8 @@ function validarURLImagen(imagen) {
   let patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)$/;
 
   if (patron.test(imagen)) {
-    console.log("la expresion regular de imagen funciona");
     return true;
   } else {
-    console.log("la expresion regular de imagen fallo");
     return false;
   }
 }
@@ -71,36 +60,29 @@ function validarURLImagenMayorTamanio(imagenMayorTamanio) {
   let patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)$/;
 
   if (patron.test(imagenMayorTamanio)) {
-    console.log("la expresion regular de imagen funciona");
     return true;
   } else {
-    console.log("la expresion regular de imagen fallo");
     return false;
   }
 }
 
 function validarRequisitos(requisitos, min, max) {
   if (requisitos.length >= min && requisitos.length <= max) {
-    console.log("dato correcto");
     return true;
   } else {
-    console.log("dato erroneo");
     return false;
   }
 }
 
 function validarDesarrollador(desarrollador, min, max) {
   if (desarrollador.length >= min && desarrollador.length <= max) {
-    console.log("dato correcto");
     return true;
   } else {
-    console.log("dato erroneo");
     return false;
   }
 }
 
 function validarPlataforma(plataforma) {
-  console.log(plataforma);
   if (
     plataforma === "pc" ||
     plataforma === "playstation5" ||
@@ -108,10 +90,8 @@ function validarPlataforma(plataforma) {
     plataforma === "nintendoswitch" ||
     plataforma === "moviles"
   ) {
-    console.log("La plataforma es un valor de la lista desplegable");
     return true;
   } else {
-    console.log("La plataforma no es un valor de la lista desplegable");
     return false;
   }
 }
