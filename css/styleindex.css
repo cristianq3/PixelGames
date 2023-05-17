@@ -23,8 +23,8 @@ main {
   padding: 20px;
   color: #fff;
   position: absolute;
-  bottom: 0px; /* Ajusta este valor según tu necesidad */
-  right: 0px; /* Ajusta este valor según tu necesidad */
+  bottom: 0px; 
+  right: 0px; 
   text-align: right;
 }
 
@@ -32,6 +32,13 @@ main {
 .card {
   width: 284px;
   margin: 10px;
+}
+
+.nombreJuego {
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 3px -1px 6px #403e41;
 }
 
 footer {
