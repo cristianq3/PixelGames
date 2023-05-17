@@ -10,6 +10,9 @@ body {
   flex-direction: column;
 }
 
+#textoTitulo {
+  font-size: 55px ;
+}
 main {
   flex-grow: 1;
 }
@@ -23,15 +26,34 @@ main {
   padding: 20px;
   color: #fff;
   position: absolute;
-  bottom: 0px; /* Ajusta este valor según tu necesidad */
-  right: 0px; /* Ajusta este valor según tu necesidad */
+  bottom: 0px; 
+  right: 0px; 
   text-align: right;
 }
 
 /* Sector juegos*/
 .card {
-  width: 284px;
+  width: 350px;
   margin: 10px;
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.69); 
+box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.69);
+
+min-height: 450px;
+}
+
+
+
+.card:hover {
+  filter: brightness(120%);
+
+}
+
+.nombreJuego {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 3px -1px 6px #000000;
+
 }
 
 footer {
@@ -57,6 +79,11 @@ footer {
     height: 80vh;
     object-fit: cover;
     object-position: 45%;
+  }
+
+  .card {
+    width: 284px;
+    margin: 10px;
   }
 
   texto-hero {
